@@ -1,170 +1,515 @@
-//Mon Dec 15 2025 04:21:11 GMT+0000 (Coordinated Universal Time)
+//Mon Dec 15 2025 04:26:28 GMT+0000 (Coordinated Universal Time)
 //Base:<url id="cv1cref6o68qmpt26ol0" type="url" status="parsed" title="GitHub - echo094/decode-js: JS混淆代码的AST分析工具 AST analysis tool for obfuscated JS code" wc="2165">https://github.com/echo094/decode-js</url>
 //Modify:<url id="cv1cref6o68qmpt26olg" type="url" status="parsed" title="GitHub - smallfawn/decode_action: 世界上本来不存在加密，加密的人多了，也便成就了解密" wc="741">https://github.com/smallfawn/decode_action</url>
-(() => {
-  const _0x19d1f1 = false;
-  const _0x345c2c = String.fromCharCode(104, 116, 116, 112, 115, 58, 47, 47, 111, 99, 114, 46, 113, 111, 114, 97, 46, 116, 111, 112, 47, 111, 99, 114);
-  const _0x56aedd = "[SX OCR]";
-  const _0x56be5a = (..._0x194bbb) => {
-    _0x19d1f1 && console.log(_0x56aedd, ..._0x194bbb);
-  };
-  const _0x4790cd = (..._0x24e46f) => {
-    _0x19d1f1 && console.warn(_0x56aedd, ..._0x24e46f);
-  };
-  const _0x1627a3 = (..._0x22acaf) => console.error(_0x56aedd, ..._0x22acaf);
-  function _0x5c0a15(_0x2a5c93, _0x3c698b, _0x586dbc) {
-    const _0x59513c = {
-      type: "SX_OCR_RESULT",
-      id: _0x2a5c93 || "unknown",
-      text: _0x3c698b || null,
-      error: _0x586dbc || null
-    };
-    try {
-      window.postMessage(_0x59513c, "*");
-      _0x56be5a("发送 OCR 结果：", _0x59513c);
-    } catch (_0xb772d0) {
-      _0x1627a3("发送 OCR 结果失败：", _0xb772d0);
-    }
+const licenseInput = document.getElementById("license-input");
+const saveLicenseBtn = document.getElementById("save-license-btn");
+const toastEl = document.getElementById("toast");
+const authSection = document.getElementById("auth-section");
+const featureSection = document.getElementById("feature-section");
+const settingsSection = document.getElementById("settings-section");
+const loadingMask = document.getElementById("loading-mask");
+let toastTimer = null;
+const nameInput = document.getElementById("name-input");
+const remarkInput = document.getElementById("remark-input");
+const phoneInput = document.getElementById("phone-input");
+const idcardInput = document.getElementById("idcard-input");
+const provinceInput = document.getElementById("province-input");
+const cityInput = document.getElementById("city-input");
+const districtInput = document.getElementById("district-input");
+const branchInput = document.getElementById("branch-input");
+const exchangeTimeInput = document.getElementById("exchange-time-input");
+const quantityInput = document.getElementById("quantity-input");
+const settingsBtn = document.getElementById("settings-btn");
+const backBtn = document.getElementById("back-btn");
+const personList = document.getElementById("person-list");
+const addFormContainer = document.getElementById("add-form-container");
+const addPersonBtn = document.getElementById("add-person-btn");
+const savePersonBtn = document.getElementById("save-person-btn");
+const cancelFormBtn = document.getElementById("cancel-form-btn");
+const formTitle = document.getElementById("form-title");
+let editingIndex = -1;
+let persons = [];
+const DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
+function formatExchangeDateForInput(_0x224cc7) {
+  if (!_0x224cc7) {
+    return "";
   }
-  function _0x5703ff() {
-    const _0x185d0d = ["script[type=\"application/json\"][id^=\"sx_ocr_config_\"]", "script[type=\"application/json\"][id^=\"jp_ocr_config_\"]"];
-    const _0x38bd8f = document.querySelectorAll(_0x185d0d.join(","));
-    return _0x38bd8f.length ? _0x38bd8f[_0x38bd8f.length - 1] : null;
+  const _0x452571 = _0x224cc7.trim();
+  if (!_0x452571) {
+    return "";
   }
-  const _0x5a321e = _0x5703ff();
-  if (!_0x5a321e) {
-    _0x1627a3("未找到 OCR 配置元素");
-    _0x5c0a15("unknown", null, "未找到OCR配置元素");
+  if (DATE_PATTERN.test(_0x452571)) {
+    return _0x452571;
+  }
+  const _0x79c401 = _0x452571.match(/^(\d{4}-\d{2}-\d{2})/);
+  if (_0x79c401) {
+    return _0x79c401[1];
+  }
+  return "";
+}
+function normalizeExchangeDateValue(_0x99e78c) {
+  if (!_0x99e78c) {
+    return "";
+  }
+  const _0x4b31da = _0x99e78c.trim();
+  if (!_0x4b31da) {
+    return "";
+  }
+  if (DATE_PATTERN.test(_0x4b31da)) {
+    return _0x4b31da;
+  }
+  const _0x10bdf1 = _0x4b31da.match(/^(\d{4}-\d{2}-\d{2})/);
+  if (_0x10bdf1) {
+    return _0x10bdf1[1];
+  }
+  return "";
+}
+function showToast(_0x1bf252, _0x5701c3 = "info", _0x4c2519 = 2500) {
+  if (!toastEl) {
     return;
   }
-  let _0x555c8e = null;
-  try {
-    _0x555c8e = JSON.parse(_0x5a321e.textContent || "{}");
-  } catch (_0x48c99e) {
-    _0x1627a3("解析 OCR 配置失败：", _0x48c99e);
-    _0x5c0a15("unknown", null, "解析OCR配置失败: " + _0x48c99e.message);
+  toastTimer && (clearTimeout(toastTimer), toastTimer = null);
+  toastEl.textContent = _0x1bf252;
+  toastEl.classList.remove("error");
+  _0x5701c3 === "error" && toastEl.classList.add("error");
+  toastEl.classList.add("show");
+  toastTimer = setTimeout(() => {
+    toastEl.classList.remove("show");
+  }, _0x4c2519);
+}
+function setLoading(_0x1f9dc7) {
+  if (!loadingMask) {
     return;
   }
-  const {
-    messageId: _0x1b6402,
-    imageDataUrl: _0x233c9c,
-    colorFilterColors: _0x367422,
-    pngFix: _0x46a6fd
-  } = _0x555c8e || {};
-  try {
-    _0x5a321e && _0x5a321e.parentNode && _0x5a321e.parentNode.removeChild(_0x5a321e);
-  } catch (_0x2ed116) {
-    _0x4790cd("移除 OCR 配置元素失败：", _0x2ed116);
+  _0x1f9dc7 ? loadingMask.classList.add("show") : loadingMask.classList.remove("show");
+}
+function showAuthSection() {
+  if (authSection) {
+    authSection.style.display = "block";
   }
-  if (!_0x1b6402 || !_0x233c9c) {
-    _0x1627a3("OCR 配置不完整：", _0x555c8e);
-    _0x5c0a15(_0x1b6402 || "unknown", null, "OCR配置不完整");
-    return;
+  if (featureSection) {
+    featureSection.style.display = "none";
   }
-  _0x56be5a("读取到 OCR 配置：", {
-    messageId: _0x1b6402
+  if (settingsSection) {
+    settingsSection.style.display = "none";
+  }
+}
+function showFeatureSection() {
+  if (authSection) {
+    authSection.style.display = "none";
+  }
+  if (featureSection) {
+    featureSection.style.display = "block";
+  }
+  if (settingsSection) {
+    settingsSection.style.display = "none";
+  }
+}
+function showSettingsSection() {
+  if (authSection) {
+    authSection.style.display = "none";
+  }
+  if (featureSection) {
+    featureSection.style.display = "none";
+  }
+  if (settingsSection) {
+    settingsSection.style.display = "block";
+  }
+  loadPersons(() => {
+    renderPersonList();
+    hideAddForm();
   });
-  (async () => {
-    try {
-      const _0x34ff49 = await _0x25c1c4(_0x233c9c);
-      if (!_0x34ff49) {
-        throw new Error("无法获取验证码图片 base64");
-      }
-      _0x56be5a("准备调用 OCR 接口，base64 长度：", _0x34ff49.length);
-      const _0x449beb = await _0x48bece(_0x34ff49, {
-        colorFilterColors: _0x367422,
-        pngFix: _0x46a6fd
-      });
-      const _0x3b3955 = (_0x449beb || "").replace(/\s+/g, "").trim();
-      if (!_0x3b3955) {
-        throw new Error("OCR 接口未返回识别结果");
-      }
-      _0x56be5a("OCR 识别成功：", _0x3b3955);
-      _0x5c0a15(_0x1b6402, _0x3b3955, null);
-    } catch (_0x1fd532) {
-      _0x1627a3("OCR 识别过程失败：", _0x1fd532);
-      _0x5c0a15(_0x1b6402, null, _0x1fd532.message || "OCR识别失败");
-    }
-  })();
-  function _0x55c28e(_0x4b9210) {
-    if (!_0x4b9210) {
-      return "";
-    }
-    const _0x293238 = _0x4b9210.indexOf(",");
-    return _0x293238 === -1 ? _0x4b9210 : _0x4b9210.slice(_0x293238 + 1);
+}
+function handlePendingView() {
+  if (!chrome?.["storage"]?.["local"]) {
+    return;
   }
-  async function _0x25c1c4(_0x12204b) {
-    if (!_0x12204b) {
-      return "";
+  chrome.storage.local.get(["__SX_PENDING_VIEW__"], _0x1dea57 => {
+    const _0x8f3ca = _0x1dea57.__SX_PENDING_VIEW__;
+    if (!_0x8f3ca) {
+      return;
     }
-    const _0x3188ef = _0x12204b.trim();
-    if (!_0x3188ef) {
-      return "";
-    }
-    if (_0x3188ef.startsWith("data:image")) {
-      return _0x55c28e(_0x3188ef);
-    }
-    try {
-      return await _0x4cddba(_0x3188ef);
-    } catch (_0x4f514b) {
-      _0x4790cd("将图片 URL 转为 base64 失败：", _0x4f514b);
-      return "";
-    }
+    chrome.storage.local.remove(["__SX_PENDING_VIEW__"]);
+    _0x8f3ca === "settings" && showSettingsSection();
+  });
+}
+function autoVerifyLicenseOnOpen() {
+  if (!chrome?.["storage"]?.["local"] || !chrome?.["runtime"]) {
+    return;
   }
-  function _0x4cddba(_0x4e272b) {
-    return new Promise((_0xbc2e09, _0x58c089) => {
-      const _0x3f6159 = new Image();
-      _0x3f6159.crossOrigin = "anonymous";
-      _0x3f6159.onload = () => {
-        try {
-          const _0x309ec1 = document.createElement("canvas");
-          _0x309ec1.width = _0x3f6159.width;
-          _0x309ec1.height = _0x3f6159.height;
-          const _0x94f731 = _0x309ec1.getContext("2d");
-          _0x94f731.drawImage(_0x3f6159, 0, 0);
-          _0xbc2e09(_0x55c28e(_0x309ec1.toDataURL("image/png")));
-        } catch (_0x40c671) {
-          _0x58c089(_0x40c671);
+  setLoading(true);
+  chrome.storage.local.get(["licenseKey"], _0xec6166 => {
+    const _0x27dd32 = _0xec6166.licenseKey;
+    if (!_0x27dd32) {
+      setLoading(false);
+      showAuthSection();
+      return;
+    }
+    licenseInput && (licenseInput.value = _0x27dd32);
+    chrome.runtime.sendMessage({
+      type: "VERIFY_LICENSE",
+      card_key: _0x27dd32
+    }, _0x1321ec => {
+      setLoading(false);
+      if (chrome.runtime.lastError) {
+        showAuthSection();
+        showToast("自动验证失败：" + chrome.runtime.lastError.message, "error");
+        return;
+      }
+      if (!_0x1321ec || !_0x1321ec.ok) {
+        showAuthSection();
+        _0x1321ec && _0x1321ec.error && showToast("自动验证失败：" + _0x1321ec.error, "error");
+        return;
+      }
+      const _0x49fb2e = _0x1321ec.data || {};
+      if (_0x49fb2e.code === 0 || _0x49fb2e.success === true) {
+        showFeatureSection();
+        const _0x378892 = _0x49fb2e.data || {};
+        if (_0x378892.card_type === "time") {
+          const _0x28bb85 = (_0x378892.duration === 0 || _0x378892.duration == null) && (_0x378892.expire_time === null || _0x378892.expire_time === "" || _0x378892.expire_time === undefined);
+          const _0x29ad80 = _0x28bb85 ? "永久" : _0x378892.expire_time || "未知";
+          showToast("已自动验证成功，到期时间：" + _0x29ad80, "info", 2500);
+        } else {
+          if (_0x378892.card_type === "count") {
+            const _0x1dbf9c = _0x378892.remaining_count;
+            const _0x42ee61 = _0x378892.total_count;
+            showToast("已自动验证成功，剩余次数：" + (_0x1dbf9c ?? "未知") + "/" + (_0x42ee61 ?? "未知"), "info", 2500);
+          } else {
+            showToast("已自动验证成功", "info", 2200);
+          }
         }
-      };
-      _0x3f6159.onerror = _0x58c089;
-      _0x3f6159.src = _0x4e272b;
+        handlePendingView();
+      } else {
+        showAuthSection();
+        const _0x5061a3 = _0x49fb2e.message || (_0x49fb2e.msg ? _0x49fb2e.msg : JSON.stringify(_0x49fb2e));
+        showToast("自动验证失败，请更换卡密重试：" + (_0x5061a3 || "未知原因"), "error", 3500);
+      }
     });
+  });
+}
+autoVerifyLicenseOnOpen();
+saveLicenseBtn.addEventListener("click", () => {
+  const _0x1ee374 = licenseInput.value.trim();
+  if (!_0x1ee374) {
+    showToast("请输入卡密后再保存。", "error");
+    return;
   }
-  async function _0x48bece(_0x126456, _0x265a0f = {}) {
-    const _0x240452 = _0x4a1d81(_0x265a0f.colorFilterColors);
-    const _0x1eb7f2 = {
-      image: _0x126456,
-      png_fix: typeof _0x265a0f.pngFix === "boolean" ? _0x265a0f.pngFix : false,
-      color_filter_colors: _0x240452
-    };
-    const _0x2468fd = await fetch(_0x345c2c, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "*/*"
-      },
-      body: JSON.stringify(_0x1eb7f2)
+  if (!chrome?.["storage"]?.["local"] || !chrome?.["runtime"]) {
+    showToast("当前环境不支持扩展存储/通信，仅作界面预览使用。", "error");
+    return;
+  }
+  chrome.storage.local.set({
+    licenseKey: _0x1ee374
+  }, () => {
+    chrome.runtime.sendMessage({
+      type: "VERIFY_LICENSE",
+      card_key: _0x1ee374
+    }, _0x3814eb => {
+      if (chrome.runtime.lastError) {
+        showToast("验证失败：" + chrome.runtime.lastError.message, "error");
+        return;
+      }
+      if (!_0x3814eb) {
+        showToast("验证失败：无响应", "error");
+        return;
+      }
+      if (!_0x3814eb.ok) {
+        showToast("验证失败：" + (_0x3814eb.error || "未知错误"), "error");
+        return;
+      }
+      const _0xc1059 = _0x3814eb.data || {};
+      if (_0xc1059.code === 0 || _0xc1059.success === true) {
+        showFeatureSection();
+        if (_0xc1059.data && _0xc1059.data.card_type === "time") {
+          const _0x137d40 = _0xc1059.data;
+          const _0x168b2a = (_0x137d40.duration === 0 || _0x137d40.duration == null) && (_0x137d40.expire_time === null || _0x137d40.expire_time === "" || _0x137d40.expire_time === undefined);
+          const _0x57e8f0 = _0x168b2a ? "永久" : _0x137d40.expire_time || "未知";
+          let _0x2913bf = _0xc1059.message && _0xc1059.message.trim() ? _0xc1059.message.trim() : "时间卡验证成功";
+          _0x2913bf.includes("重复验证") && (_0x2913bf = "时间卡验证成功");
+          const _0x315186 = _0x2913bf + "，到期时间：" + _0x57e8f0;
+          showToast(_0x315186, "info", 3500);
+        } else {
+          if (_0xc1059.data && _0xc1059.data.card_type === "count") {
+            const _0x291c88 = _0xc1059.data;
+            const _0x51ac7c = _0x291c88.remaining_count;
+            const _0xb23655 = _0x291c88.total_count;
+            const _0xbe60c0 = _0xc1059.message || "次数卡验证成功，剩余次数：" + (_0x51ac7c ?? "未知") + "/" + (_0xb23655 ?? "未知");
+            showToast(_0xbe60c0, "info", 3200);
+          } else {
+            showToast(_0xc1059.message || "卡密验证成功", "info", 3000);
+          }
+        }
+        handlePendingView();
+      } else {
+        const _0x5c0fdf = _0xc1059.message || (_0xc1059.msg ? _0xc1059.msg : JSON.stringify(_0xc1059));
+        showAuthSection();
+        showToast("卡密验证失败，请更换卡密重试：" + _0x5c0fdf, "error", 3500);
+      }
     });
-    if (!_0x2468fd.ok) {
-      throw new Error("OCR 接口响应错误：" + _0x2468fd.status + " " + _0x2468fd.statusText);
+  });
+});
+const activateScriptBtn = document.getElementById("activate-script-btn");
+activateScriptBtn && activateScriptBtn.addEventListener("click", () => {
+  chrome.tabs.query({
+    active: true,
+    currentWindow: true
+  }, _0x30dcb6 => {
+    if (_0x30dcb6.length === 0) {
+      showToast("无法获取当前页面", "error");
+      return;
     }
-    const _0x1f227c = await _0x2468fd.json().catch(() => ({}));
-    const _0x58bbf7 = _0x1f227c?.["text"] || _0x1f227c?.["data"]?.["text"] || _0x1f227c?.["data"]?.["result"] || _0x1f227c?.["code"] || _0x1f227c?.["message"] || "";
-    return typeof _0x58bbf7 === "string" ? _0x58bbf7 : String(_0x58bbf7 || "");
+    const _0x255f07 = _0x30dcb6[0].id;
+    chrome.tabs.sendMessage(_0x255f07, {
+      type: "ACTIVATE_SCRIPT"
+    }, _0x114ecf => {
+      if (chrome.runtime.lastError) {
+        showToast("激活失败：" + chrome.runtime.lastError.message, "error");
+        return;
+      }
+      _0x114ecf && _0x114ecf.success ? showToast("脚本已激活", "info") : showToast(_0x114ecf?.["error"] || "激活失败，请刷新页面后重试", "error");
+    });
+  });
+});
+function loadPersons(_0x2b8195) {
+  if (!chrome?.["storage"]?.["local"]) {
+    persons = [];
+    if (_0x2b8195) {
+      _0x2b8195();
+    }
+    return;
   }
-  function _0x4a1d81(_0x2c8557) {
-    if (!_0x2c8557) {
-      return null;
+  chrome.storage.local.get(["userSettings"], _0x13d306 => {
+    const _0x48c1bf = _0x13d306.userSettings;
+    if (!_0x48c1bf) {
+      persons = [];
+      if (_0x2b8195) {
+        _0x2b8195();
+      }
+      return;
     }
-    if (Array.isArray(_0x2c8557)) {
-      const _0x429dc0 = _0x2c8557.map(_0x87cbf9 => String(_0x87cbf9).trim()).filter(Boolean);
-      return _0x429dc0.length ? _0x429dc0 : null;
+    try {
+      const _0x2c657a = typeof _0x48c1bf === "string" ? JSON.parse(_0x48c1bf) : _0x48c1bf;
+      if (Array.isArray(_0x2c657a)) {
+        persons = _0x2c657a;
+      } else {
+        typeof _0x2c657a === "object" && _0x2c657a.name ? persons = [_0x2c657a] : persons = [];
+      }
+    } catch (_0x2d9d95) {
+      console.error("加载设置失败:", _0x2d9d95);
+      persons = [];
     }
-    if (typeof _0x2c8557 === "string") {
-      const _0x25e6d3 = _0x2c8557.trim();
-      return _0x25e6d3 ? [_0x25e6d3] : null;
+    if (_0x2b8195) {
+      _0x2b8195();
     }
-    return null;
+  });
+}
+function savePersons() {
+  if (!chrome?.["storage"]?.["local"]) {
+    showToast("当前环境不支持扩展存储", "error");
+    return;
   }
-})();
+  const _0x46f18b = JSON.stringify(persons, null, 2);
+  chrome.storage.local.set({
+    userSettings: _0x46f18b
+  }, () => {
+    showToast("保存成功", "info");
+  });
+}
+function renderPersonList() {
+  if (!personList) {
+    return;
+  }
+  if (persons.length === 0) {
+    personList.innerHTML = "<div class=\"empty-state\">暂无人员信息<br/>点击\"添加人员\"开始添加</div>";
+    addPersonBtn && (addPersonBtn.textContent = "+ 添加人员", addPersonBtn.disabled = false);
+    return;
+  }
+  addPersonBtn && (persons.length >= 20 ? (addPersonBtn.textContent = "已达上限（20人）", addPersonBtn.disabled = true, addPersonBtn.style.opacity = "0.6") : (addPersonBtn.textContent = "+ 添加人员 (" + persons.length + "/20)", addPersonBtn.disabled = false, addPersonBtn.style.opacity = "1"));
+  personList.innerHTML = persons.map((_0x15611f, _0x5472fb) => {
+    const _0x55da95 = editingIndex === _0x5472fb;
+    return "\n      <div class=\"person-card-wrapper\" data-index=\"" + _0x5472fb + "\">\n        <div class=\"person-card\">\n          <div class=\"person-card-header " + (_0x55da95 ? "editing" : "") + "\">\n            <div class=\"person-card-name\">" + (_0x15611f.name || "未命名") + "</div>\n            <div class=\"person-card-actions\">\n              <button class=\"btn-small btn-edit\" data-index=\"" + _0x5472fb + "\" data-action=\"edit\">" + (_0x55da95 ? "取消" : "编辑") + "</button>\n              <button class=\"btn-small btn-delete\" data-index=\"" + _0x5472fb + "\" data-action=\"delete\">删除</button>\n            </div>\n          </div>\n          " + (_0x55da95 ? createInlineEditForm(_0x5472fb, _0x15611f) : "") + "\n        </div>\n      </div>\n    ";
+  }).join("");
+  personList.querySelectorAll("[data-action]").forEach(_0x2a3270 => {
+    _0x2a3270.addEventListener("click", _0x43c9b2 => {
+      const _0xbd116d = parseInt(_0x43c9b2.target.getAttribute("data-index"));
+      const _0x589e66 = _0x43c9b2.target.getAttribute("data-action");
+      if (_0x589e66 === "edit") {
+        editPerson(_0xbd116d);
+      } else {
+        _0x589e66 === "delete" && deletePerson(_0xbd116d);
+      }
+    });
+  });
+  personList.querySelectorAll(".inline-save-btn").forEach(_0x366379 => {
+    _0x366379.addEventListener("click", _0x516049 => {
+      const _0x5c0517 = parseInt(_0x516049.target.getAttribute("data-index"));
+      saveInlineEdit(_0x5c0517);
+    });
+  });
+  personList.querySelectorAll(".inline-cancel-btn").forEach(_0x30e5a1 => {
+    _0x30e5a1.addEventListener("click", _0x50d0a2 => {
+      const _0x3aec13 = parseInt(_0x50d0a2.target.getAttribute("data-index"));
+      cancelInlineEdit(_0x3aec13);
+    });
+  });
+}
+function showAddForm() {
+  if (persons.length >= 20) {
+    showToast("最多只能添加20人", "error");
+    return;
+  }
+  editingIndex >= 0 && (editingIndex = -1, renderPersonList());
+  addFormContainer && (addFormContainer.style.display = "block");
+  addPersonBtn && (addPersonBtn.style.display = "none");
+  clearForm();
+  editingIndex = -1;
+  formTitle && (formTitle.textContent = "添加人员");
+}
+function hideAddForm() {
+  addFormContainer && (addFormContainer.style.display = "none");
+  addPersonBtn && (addPersonBtn.style.display = "block");
+  clearForm();
+  editingIndex = -1;
+}
+function clearForm() {
+  if (nameInput) {
+    nameInput.value = "";
+  }
+  if (remarkInput) {
+    remarkInput.value = "";
+  }
+  if (phoneInput) {
+    phoneInput.value = "";
+  }
+  if (idcardInput) {
+    idcardInput.value = "";
+  }
+  if (provinceInput) {
+    provinceInput.value = "";
+  }
+  if (cityInput) {
+    cityInput.value = "";
+  }
+  if (districtInput) {
+    districtInput.value = "";
+  }
+  if (branchInput) {
+    branchInput.value = "";
+  }
+  if (exchangeTimeInput) {
+    exchangeTimeInput.value = "";
+  }
+  if (quantityInput) {
+    quantityInput.value = "";
+  }
+}
+function createInlineEditForm(_0x2a232d, _0x3531f8) {
+  const _0x4d140a = formatExchangeDateForInput(_0x3531f8.exchangeTime || "");
+  return "\n    <div class=\"edit-form-inline\" data-edit-index=\"" + _0x2a232d + "\">\n      <div class=\"field-label\">姓名</div>\n      <input class=\"inline-edit-name\" type=\"text\" placeholder=\"请输入姓名\" value=\"" + (_0x3531f8.name || "").replace(/"/g, "&quot;") + "\" />\n\n      <div class=\"field-label\" style=\"margin-top: 10px\">备注（仅用于显示）</div>\n      <input class=\"inline-edit-remark\" type=\"text\" placeholder=\"例如：工行，家属账户等\" value=\"" + (_0x3531f8.remark || "").replace(/"/g, "&quot;") + "\" />\n      \n      <div class=\"field-label\" style=\"margin-top: 10px\">手机号码</div>\n      <input class=\"inline-edit-phone\" type=\"tel\" placeholder=\"请输入手机号码\" value=\"" + (_0x3531f8.phone || "").replace(/"/g, "&quot;") + "\" />\n      \n      <div class=\"field-label\" style=\"margin-top: 10px\">身份证号码</div>\n      <input class=\"inline-edit-idcard\" type=\"text\" placeholder=\"请输入身份证号码\" value=\"" + (_0x3531f8.idcard || "").replace(/"/g, "&quot;") + "\" />\n      \n      <div class=\"field-label\" style=\"margin-top: 10px\">省份</div>\n      <input class=\"inline-edit-province\" type=\"text\" placeholder=\"请输入省份\" value=\"" + (_0x3531f8.province || "").replace(/"/g, "&quot;") + "\" />\n      \n      <div class=\"field-label\" style=\"margin-top: 10px\">城市</div>\n      <input class=\"inline-edit-city\" type=\"text\" placeholder=\"请输入城市\" value=\"" + (_0x3531f8.city || "").replace(/"/g, "&quot;") + "\" />\n      \n      <div class=\"field-label\" style=\"margin-top: 10px\">区/县</div>\n      <input class=\"inline-edit-district\" type=\"text\" placeholder=\"请输入区/县\" value=\"" + (_0x3531f8.district || "").replace(/"/g, "&quot;") + "\" />\n      \n      <div class=\"field-label\" style=\"margin-top: 10px\">网点</div>\n      <input class=\"inline-edit-branch\" type=\"text\" placeholder=\"请输入网点\" value=\"" + (_0x3531f8.branch || "").replace(/"/g, "&quot;") + "\" />\n      \n      <div class=\"field-label\" style=\"margin-top: 10px\">兑换日期</div>\n      <input class=\"inline-edit-exchange-time\" type=\"date\" placeholder=\"请选择兑换日期\" value=\"" + _0x4d140a + "\" />\n      \n      <div class=\"field-label\" style=\"margin-top: 10px\">预约数量</div>\n      <input class=\"inline-edit-quantity\" type=\"number\" placeholder=\"请输入预约数量\" min=\"1\" value=\"" + (_0x3531f8.quantity || "") + "\" />\n      \n      <div class=\"form-buttons\" style=\"margin-top: 12px\">\n        <button class=\"btn inline-save-btn\" data-index=\"" + _0x2a232d + "\">保存</button>\n        <button class=\"btn btn-cancel inline-cancel-btn\" data-index=\"" + _0x2a232d + "\">取消</button>\n      </div>\n    </div>\n  ";
+}
+function editPerson(_0x4c6569) {
+  if (_0x4c6569 < 0 || _0x4c6569 >= persons.length) {
+    return;
+  }
+  if (editingIndex === _0x4c6569) {
+    editingIndex = -1;
+    renderPersonList();
+    return;
+  }
+  hideAddForm();
+  editingIndex = _0x4c6569;
+  renderPersonList();
+  const _0x506c05 = personList.querySelector("[data-index=\"" + _0x4c6569 + "\"]");
+  _0x506c05 && _0x506c05.scrollIntoView({
+    behavior: "smooth",
+    block: "nearest"
+  });
+}
+function deletePerson(_0x57ddba) {
+  if (_0x57ddba < 0 || _0x57ddba >= persons.length) {
+    return;
+  }
+  confirm("确定要删除这条人员信息吗？") && (persons.splice(_0x57ddba, 1), savePersons(), renderPersonList(), showToast("已删除", "info"));
+}
+function saveInlineEdit(_0x349524) {
+  if (_0x349524 < 0 || _0x349524 >= persons.length) {
+    return;
+  }
+  const _0x3f6bf0 = personList.querySelector("[data-edit-index=\"" + _0x349524 + "\"]");
+  if (!_0x3f6bf0) {
+    return;
+  }
+  const _0x317c81 = {
+    name: _0x3f6bf0.querySelector(".inline-edit-name")?.["value"]["trim"]() || "",
+    remark: _0x3f6bf0.querySelector(".inline-edit-remark")?.["value"]["trim"]() || "",
+    phone: _0x3f6bf0.querySelector(".inline-edit-phone")?.["value"]["trim"]() || "",
+    idcard: _0x3f6bf0.querySelector(".inline-edit-idcard")?.["value"]["trim"]() || "",
+    province: _0x3f6bf0.querySelector(".inline-edit-province")?.["value"]["trim"]() || "",
+    city: _0x3f6bf0.querySelector(".inline-edit-city")?.["value"]["trim"]() || "",
+    district: _0x3f6bf0.querySelector(".inline-edit-district")?.["value"]["trim"]() || "",
+    branch: _0x3f6bf0.querySelector(".inline-edit-branch")?.["value"]["trim"]() || "",
+    exchangeTime: normalizeExchangeDateValue(_0x3f6bf0.querySelector(".inline-edit-exchange-time")?.["value"] || ""),
+    quantity: _0x3f6bf0.querySelector(".inline-edit-quantity")?.["value"]["trim"]() || ""
+  };
+  if (!_0x317c81.name) {
+    showToast("请输入姓名", "error");
+    return;
+  }
+  persons[_0x349524] = _0x317c81;
+  savePersons();
+  editingIndex = -1;
+  renderPersonList();
+  showToast("更新成功", "info");
+}
+function cancelInlineEdit(_0x11b331) {
+  editingIndex = -1;
+  renderPersonList();
+}
+function savePerson() {
+  const _0xeeaef4 = {
+    name: nameInput?.["value"]["trim"]() || "",
+    remark: remarkInput?.["value"]["trim"]() || "",
+    phone: phoneInput?.["value"]["trim"]() || "",
+    idcard: idcardInput?.["value"]["trim"]() || "",
+    province: provinceInput?.["value"]["trim"]() || "",
+    city: cityInput?.["value"]["trim"]() || "",
+    district: districtInput?.["value"]["trim"]() || "",
+    branch: branchInput?.["value"]["trim"]() || "",
+    exchangeTime: normalizeExchangeDateValue(exchangeTimeInput?.["value"] || ""),
+    quantity: quantityInput?.["value"]["trim"]() || ""
+  };
+  if (!_0xeeaef4.name) {
+    showToast("请输入姓名", "error");
+    return;
+  }
+  if (editingIndex >= 0) {
+    persons[editingIndex] = _0xeeaef4;
+    showToast("更新成功", "info");
+  } else {
+    if (persons.length >= 20) {
+      showToast("最多只能添加20人", "error");
+      return;
+    }
+    persons.push(_0xeeaef4);
+    showToast("添加成功", "info");
+  }
+  savePersons();
+  renderPersonList();
+  hideAddForm();
+}
+settingsBtn && settingsBtn.addEventListener("click", () => {
+  showSettingsSection();
+});
+backBtn && backBtn.addEventListener("click", () => {
+  hideAddForm();
+  showFeatureSection();
+});
+addPersonBtn && addPersonBtn.addEventListener("click", () => {
+  showAddForm();
+});
+savePersonBtn && savePersonBtn.addEventListener("click", () => {
+  savePerson();
+});
+cancelFormBtn && cancelFormBtn.addEventListener("click", () => {
+  hideAddForm();
+});
