@@ -1,386 +1,471 @@
-//Mon Dec 15 2025 04:40:52 GMT+0000 (Coordinated Universal Time)
+//Mon Dec 15 2025 04:41:49 GMT+0000 (Coordinated Universal Time)
 //Base:<url id="cv1cref6o68qmpt26ol0" type="url" status="parsed" title="GitHub - echo094/decode-js: JS混淆代码的AST分析工具 AST analysis tool for obfuscated JS code" wc="2165">https://github.com/echo094/decode-js</url>
 //Modify:<url id="cv1cref6o68qmpt26olg" type="url" status="parsed" title="GitHub - smallfawn/decode_action: 世界上本来不存在加密，加密的人多了，也便成就了解密" wc="741">https://github.com/smallfawn/decode_action</url>
-const originalLog = console.log;
-const originalWarn = console.warn;
-const originalDebug = console.debug;
-const originalInfo = console.info;
-console.log = function (..._0x3b05ed) {
-  originalLog.apply(console, ["[SX FormFill]", ..._0x3b05ed]);
-};
-console.warn = function (..._0xad2130) {
-  originalWarn.apply(console, ["[SX FormFill WARN]", ..._0xad2130]);
-};
-console.debug = function (..._0x56cfbe) {
-  originalDebug.apply(console, ["[SX FormFill DEBUG]", ..._0x56cfbe]);
-};
-console.info = function (..._0x146924) {
-  originalInfo.apply(console, ["[SX FormFill INFO]", ..._0x146924]);
-};
 (function () {
-  const _0x250850 = "SX_FILL";
-  const _0x3459ef = "SX_GET_CONFIG";
-  function _0x38ab1e(_0x6366d0, _0x52daaf) {
-    _0x6366d0 && (_0x6366d0.value = _0x52daaf, _0x6366d0.dispatchEvent(new Event("input", {
-      bubbles: true
-    })), _0x6366d0.dispatchEvent(new Event("change", {
-      bubbles: true
-    })));
-  }
-  function _0x464dc2(_0x512e45) {
-    return String(_0x512e45 || "").replace(/\s+/g, "").toLowerCase();
-  }
-  function _0x42d4c2(_0x283bd6) {
-    const _0x7b9e29 = {
-      fullName: [{
-        label: ["姓名", "客户姓名", "兑换人姓名", "请填写客户姓名", "请输入姓名", "name", "userName", "customerName"]
-      }, {
-        placeholder: ["请输入姓名", "请输入客户姓名", "请输入兑换人姓名", "name", "姓名"]
-      }, {
-        name: ["name", "fullName", "userName", "customerName", "realName"]
-      }, {
-        id: ["name", "fullName", "userName", "customerName", "realName"]
-      }],
-      idType: [{
-        label: ["证件类型", "idType", "certType", "id_type"]
-      }, {
-        name: ["idType", "certType", "id_type", "cert_type", "idTypeCode"]
-      }, {
-        id: ["idType", "certType", "id_type", "cert_type"]
-      }],
-      idNumber: [{
-        label: ["证件号码", "证件号", "身份证号", "idNumber", "idNo", "certNo", "certNumber"]
-      }, {
-        placeholder: ["请输入证件号码", "请输入证件号", "请输入身份证号", "idNumber", "证件号"]
-      }, {
-        name: ["idNumber", "idNo", "certNo", "certNumber", "id_number", "cert_no"]
-      }, {
-        id: ["idNumber", "idNo", "certNo", "certNumber", "id_number"]
-      }],
-      mobile: [{
-        label: ["手机号", "手机号码", "联系电话", "mobile", "phone", "mobilePhone", "tel"]
-      }, {
-        placeholder: ["请输入手机号", "请输入手机号码", "请输入联系电话", "mobile", "手机号"]
-      }, {
-        name: ["mobile", "phone", "mobilePhone", "tel", "telephone", "contactPhone"]
-      }, {
-        id: ["mobile", "phone", "mobilePhone", "tel"]
-      }],
-      address: [{
-        label: ["详细地址", "地址", "address", "detailAddress", "fullAddress"]
-      }, {
-        placeholder: ["请输入详细地址", "请输入地址", "address"]
-      }, {
-        name: ["address", "detailAddress", "fullAddress", "addr"]
-      }, {
-        id: ["address", "detailAddress", "fullAddress", "addr"]
-      }]
-    }[_0x283bd6];
-    if (!_0x7b9e29) {
-      return null;
-    }
-    const _0xe86fa2 = Array.from(document.querySelectorAll("tr.el-table__row"));
-    for (const _0x117fff of _0xe86fa2) {
-      const _0x126e7a = _0x117fff.querySelector("td:first-child");
-      const _0x480ab0 = _0x117fff.querySelector("td:last-child, td:nth-child(2)");
-      if (_0x126e7a && _0x480ab0) {
-        const _0x11f155 = Array.from(_0x126e7a.querySelectorAll("div.information-item"));
-        const _0x26a0a6 = Array.from(_0x480ab0.querySelectorAll("div.information-input"));
-        for (let _0x86a1de = 0; _0x86a1de < _0x11f155.length; _0x86a1de++) {
-          const _0x20fe92 = _0x11f155[_0x86a1de];
-          const _0x391815 = _0x464dc2(_0x20fe92.textContent || _0x20fe92.innerText || "").replace(/[：:：\*\s]+$/, "").trim();
-          if (!_0x391815.includes("发行计划") && _0x391815 !== "发行计划" || _0x283bd6 !== "idNumber") {
-            for (const _0x3a6781 of _0x7b9e29) {
-              if (_0x3a6781.label) {
-                if (_0x3a6781.label.some(_0x2a809d => {
-                  const _0x3cb9e2 = _0x464dc2(_0x2a809d);
-                  if (_0x391815 === _0x3cb9e2) {
-                    return true;
-                  }
-                  if (_0x391815.startsWith(_0x3cb9e2)) {
-                    return true;
-                  }
-                  if (_0x3cb9e2.length >= 2 && _0x391815.includes(_0x3cb9e2)) {
-                    if (_0x283bd6 !== "idNumber") {
-                      return true;
-                    }
-                    {
-                      const _0x4b484c = ["证件号码", "证件号", "身份证号", "idnumber", "idno", "certno"];
-                      if (_0x4b484c.some(_0x41d24a => _0x3cb9e2 === _0x464dc2(_0x41d24a))) {
-                        if (_0x4b484c.some(_0xf215c7 => _0x391815.includes(_0x464dc2(_0xf215c7)))) {
-                          return true;
-                        }
-                      }
-                    }
-                  }
-                  return false;
-                }) && _0x86a1de < _0x26a0a6.length) {
-                  const _0x3a8abc = _0x26a0a6[_0x86a1de].querySelector("input, select, textarea");
-                  if (_0x3a8abc && _0x3a8abc.offsetParent !== null && !_0x3a8abc.disabled) {
-                    console.log("[SX FormFill] Element UI 表格匹配成功: " + _0x283bd6 + " -> 标签\"" + _0x391815 + "\" (索引" + _0x86a1de + ")");
-                    return _0x3a8abc;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    const _0x25f0c2 = Array.from(document.querySelectorAll("input, select, textarea"));
-    for (const _0x50b51f of _0x25f0c2) {
-      if (_0x50b51f.offsetParent !== null && !_0x50b51f.disabled) {
-        for (const _0x2033ba of _0x7b9e29) {
-          if (_0x2033ba.label) {
-            const _0x4543ae = _0x50b51f.closest("form, div, tr, td, li")?.["querySelector"]("label");
-            if (_0x4543ae) {
-              const _0x33ec07 = _0x464dc2(_0x4543ae.textContent || _0x4543ae.innerText || "");
-              if (_0x2033ba.label.some(_0x10442a => _0x33ec07.includes(_0x464dc2(_0x10442a)))) {
-                return _0x50b51f;
-              }
-            }
-            const _0x2d9013 = _0x50b51f.id;
-            if (_0x2d9013) {
-              const _0x5e1a1f = document.querySelector("label[for=\"" + _0x2d9013 + "\"]");
-              if (_0x5e1a1f) {
-                const _0x211b6a = _0x464dc2(_0x5e1a1f.textContent || _0x5e1a1f.innerText || "");
-                if (_0x2033ba.label.some(_0x29679e => _0x211b6a.includes(_0x464dc2(_0x29679e)))) {
-                  return _0x50b51f;
-                }
-              }
-            }
-            const _0x14970e = _0x50b51f.parentElement;
-            if (_0x14970e) {
-              const _0x13bbfa = _0x464dc2(_0x14970e.textContent || _0x14970e.innerText || "");
-              if (_0x2033ba.label.some(_0x47b236 => _0x13bbfa.includes(_0x464dc2(_0x47b236)) && _0x13bbfa.length < 200)) {
-                return _0x50b51f;
-              }
-            }
-          }
-          if (_0x2033ba.placeholder && _0x50b51f.placeholder) {
-            const _0x1cf12b = _0x464dc2(_0x50b51f.placeholder);
-            if (_0x2033ba.placeholder.some(_0x29a095 => _0x1cf12b.includes(_0x464dc2(_0x29a095)))) {
-              return _0x50b51f;
-            }
-          }
-          if (_0x2033ba.name && _0x50b51f.name) {
-            const _0x4e2fde = _0x464dc2(_0x50b51f.name);
-            if (_0x2033ba.name.some(_0x37e0be => _0x4e2fde === _0x464dc2(_0x37e0be) || _0x4e2fde.includes(_0x464dc2(_0x37e0be)))) {
-              return _0x50b51f;
-            }
-          }
-          if (_0x2033ba.id && _0x50b51f.id) {
-            const _0x10b001 = _0x464dc2(_0x50b51f.id);
-            if (_0x2033ba.id.some(_0xfde7ee => _0x10b001 === _0x464dc2(_0xfde7ee) || _0x10b001.includes(_0x464dc2(_0xfde7ee)))) {
-              return _0x50b51f;
-            }
-          }
-        }
-      }
-    }
-    return null;
-  }
-  window.__SX_SMART_FIND__ = _0x42d4c2;
-  function _0x3ac517(_0x37ee4d) {
-    if (!_0x37ee4d || !_0x37ee4d.options) {
-      return;
-    }
-    const _0x6df8bf = ["身份证", "居民身份证", "证件号码", "证件号", "身份證", "二代身份证", "二代身份證", "idcard", "identitycard", "id_card", "id-card", "id", "idno", "idnumber", "idtype"];
-    const _0x178476 = ["01", "1", "id", "idc"];
-    const _0x42298a = Array.from(_0x37ee4d.options);
-    for (const _0xa18ff4 of _0x42298a) {
-      const _0x40a627 = _0x464dc2(_0xa18ff4.textContent || _0xa18ff4.label || "");
-      if (_0x6df8bf.some(_0x10b817 => _0x40a627.includes(_0x464dc2(_0x10b817)))) {
-        _0x37ee4d.value = _0xa18ff4.value;
-        _0x37ee4d.dispatchEvent(new Event("change", {
-          bubbles: true
-        }));
-        return true;
-      }
-    }
-    for (const _0x38af6f of _0x42298a) {
-      const _0x597bb3 = _0x464dc2(_0x38af6f.value || _0x38af6f.label || "");
-      if (_0x6df8bf.some(_0x1095c5 => _0x597bb3.includes(_0x464dc2(_0x1095c5))) || _0x178476.some(_0xa6213c => _0x597bb3 === _0x464dc2(_0xa6213c))) {
-        _0x37ee4d.value = _0x38af6f.value;
-        _0x37ee4d.dispatchEvent(new Event("change", {
-          bubbles: true
-        }));
-        return true;
-      }
-    }
-    return false;
-  }
-  async function _0x3c612e(_0x1c2eb4) {
-    try {
-      const _0x21ee2b = await async function () {
-        return await new Promise(_0x551d77 => {
-          chrome.runtime.sendMessage({
-            type: _0x3459ef
-          }, _0x551d77);
-        });
-      }();
-      const _0xa151cd = _0x1c2eb4?.["bank"] || function () {
-        const _0x56baa2 = window.shuixian?.["detect"]?.();
-        return _0x56baa2?.["id"] || "UNKNOWN";
-      }();
-      const _0x4b1a3b = _0x1c2eb4?.["region"] || "";
-      const _0x2e046e = function (_0x4c49d6, _0x23f8e2, _0x5d3a60, _0x546ab7) {
-        if (_0x23f8e2) {
-          const _0x522731 = (_0x4c49d6.profiles || []).find(_0x17186c => _0x17186c.id === _0x23f8e2);
-          if (_0x522731) {
-            return _0x522731;
-          }
-        }
-        if (_0x4c49d6.profileSelection?.["rules"]?.["length"]) {
-          const _0x11d4a3 = _0x4c49d6.profileSelection.rules.find(_0x3befe2 => !(_0x3befe2.bank && _0x3befe2.bank !== _0x5d3a60 || _0x3befe2.region && _0x3befe2.region !== _0x546ab7));
-          if (_0x11d4a3) {
-            const _0x1dae7f = (_0x4c49d6.profiles || []).find(_0x3bee4f => _0x3bee4f.id === _0x11d4a3.profileId);
-            if (_0x1dae7f) {
-              return _0x1dae7f;
-            }
-          }
-        }
-        if (_0x4c49d6.defaultProfileId) {
-          const _0x2fea92 = (_0x4c49d6.profiles || []).find(_0x1750c9 => _0x1750c9.id === _0x4c49d6.defaultProfileId);
-          if (_0x2fea92) {
-            return _0x2fea92;
-          }
-        }
-        return null;
-      }(_0x21ee2b, _0x1c2eb4?.["profile"], _0xa151cd, _0x4b1a3b);
-      if (!_0x2e046e) {
-        throw new Error("未找到可用的信息模板，请在扩展选项中配置。");
-      }
-      const _0x5ec2a9 = window.shuixian?.["get"]?.(_0xa151cd);
-      const _0x38bfd6 = _0x5ec2a9?.["getSelectorMap"]?.() || (_0x21ee2b.bankFieldMap || {})[_0xa151cd] || {};
-      if (_0x5ec2a9?.["waitForOpen"]) {
-        try {
-          await _0x5ec2a9.waitForOpen();
-        } catch {}
-      }
-      if (_0x5ec2a9?.["fillForm"]) {
-        try {
-          await _0x5ec2a9.fillForm({
-            profile: _0x2e046e,
-            region: _0x4b1a3b,
-            payload: _0x1c2eb4
-          });
-        } catch (_0x5cc5b8) {
-          console.warn("适配器填充失败:", _0x5cc5b8);
-        }
-      }
-      (function (_0x3dc358, _0xe11ae4) {
-        const _0x33513c = {
-          fullName: "fullName",
-          idType: "idType",
-          idNumber: "idNumber",
-          mobile: "mobile",
-          address: "address"
-        };
-        if (_0xe11ae4) {
-          for (const [_0x365bec, _0x133472] of Object.entries(_0xe11ae4)) {
-            const _0x2d36fe = _0x3dc358[_0x365bec];
-            if (_0x2d36fe == null) {
-              continue;
-            }
-            const _0x1fc352 = document.querySelector(_0x133472);
-            if (_0x1fc352) {
-              if (_0x365bec !== "idType" || _0x1fc352.tagName !== "SELECT" && _0x1fc352.getAttribute("role") !== "listbox") {
-                _0x38ab1e(_0x1fc352, _0x2d36fe);
-              } else {
-                !_0x3ac517(_0x1fc352) && _0x38ab1e(_0x1fc352, _0x2d36fe);
-              }
-            }
-          }
-        }
-        for (const [_0x1fa48d, _0x687574] of Object.entries(_0x33513c)) {
-          const _0x6d49a7 = _0x3dc358[_0x687574];
-          if (_0x6d49a7 == null) {
-            continue;
-          }
-          if (_0xe11ae4 && _0xe11ae4[_0x687574]) {
-            const _0x3cad50 = document.querySelector(_0xe11ae4[_0x687574]);
-            if (_0x3cad50 && _0x3cad50.value) {
-              continue;
-            }
-          }
-          const _0x4f858d = _0x42d4c2(_0x1fa48d);
-          if (_0x4f858d) {
-            if (_0x1fa48d !== "idType" || _0x4f858d.tagName !== "SELECT" && _0x4f858d.getAttribute("role") !== "listbox") {
-              _0x38ab1e(_0x4f858d, _0x6d49a7);
-            } else {
-              !_0x3ac517(_0x4f858d) && _0x38ab1e(_0x4f858d, _0x6d49a7);
-            }
-          }
-        }
-      })(_0x2e046e, _0x38bfd6);
-      (function (_0x44c2ab, _0x45a2a8) {
-        const _0x304352 = [_0x45a2a8?.["province"], _0x45a2a8?.["city"], _0x45a2a8?.["district"]].filter(Boolean);
-        const _0x46f279 = [_0x44c2ab.province, _0x44c2ab.city, _0x44c2ab.district].filter(Boolean);
-        for (let _0xde811b = 0; _0xde811b < _0x304352.length; _0xde811b++) {
-          const _0x3c6007 = _0x304352[_0xde811b];
-          const _0xf117d8 = _0x46f279[_0xde811b];
-          const _0x27a9bd = document.querySelector(_0x3c6007);
-          if (!_0x27a9bd || !_0xf117d8) {
-            continue;
-          }
-          const _0x56b836 = Array.from(_0x27a9bd.options || []).find(_0x206f41 => _0x206f41.textContent.includes(_0xf117d8) || _0x206f41.value.includes(_0xf117d8));
-          _0x56b836 && (_0x27a9bd.value = _0x56b836.value, _0x27a9bd.dispatchEvent(new Event("change", {
-            bubbles: true
-          })));
-        }
-      })(_0x2e046e, _0x38bfd6);
-      if (_0x1c2eb4?.["submit"]) {
-        if (_0x5ec2a9?.["submit"]) {
-          try {
-            await _0x5ec2a9.submit();
-          } catch {}
-        } else {
-          const _0x58474b = _0x38bfd6.submitButton || "button[type='submit'], .submit, .btn-submit";
-          const _0x5fd941 = document.querySelector(_0x58474b);
-          _0x5fd941 && _0x5fd941.click();
-        }
-      }
-      return {
-        ok: true,
-        bank: _0xa151cd,
-        profileName: _0x2e046e.alias || _0x2e046e.fullName || _0x2e046e.id
-      };
-    } catch (_0x48ffd1) {
-      console.error("填充失败:", _0x48ffd1);
-      return {
-        ok: false,
-        error: _0x48ffd1.message
-      };
-    }
-  }
-  window.__SX_FILL_FORM__ = _0x3c612e;
-  chrome.runtime.onMessage.addListener((_0x53e50e, _0x5d375a, _0x41a9c6) => _0x53e50e?.["type"] === _0x250850 && (_0x3c612e(_0x53e50e.payload).then(_0x4f197e => {
-    _0x41a9c6(_0x4f197e || {
-      ok: true
-    });
-  }).catch(_0x1a29cd => {
-    _0x41a9c6({
-      ok: false,
-      error: _0x1a29cd.message
-    });
-  }), true));
-  const _0x26b4a8 = new URL(location.href).searchParams.get("sx_cmd");
-  if (_0x26b4a8) {
-    const _0x4c6aa8 = {};
-    _0x26b4a8.split(/\s+/).forEach((_0x4465a5, _0x3e64cc) => {
-      if (_0x3e64cc === 0) {
+  const _0x361593 = {
+    id: "ICBC",
+    detect: () => location.hostname.includes("icbc"),
+    async waitForOpen() {},
+    getSelectorMap: () => ({
+      fullName: "#custName, input[name=\"custName\"]",
+      idType: "#idType, select[name=\"idType\"]",
+      idNumber: "#idNo, input[name=\"idNo\"]",
+      mobile: "#mobile, input[name=\"mobile\"]",
+      address: "#address, textarea[name=\"address\"]",
+      zipCode: "#zip, input[name=\"zip\"]",
+      province: "select#province",
+      city: "select#city",
+      district: "select#district",
+      submitButton: "button#submit, button.btn-submit, .submit"
+    }),
+    async fillForm(_0x1f6c77) {
+      console.log("[ICBC] fillForm 被调用（使用智能匹配逻辑）");
+      console.log("[ICBC] 接收到的数据：", _0x1f6c77);
+      const _0x227a60 = window.__SX_SMART_FIND__;
+      if (typeof _0x227a60 !== "function") {
+        console.warn("[ICBC] 未找到智能匹配函数 __SX_SMART_FIND__，无法智能匹配表单");
         return;
       }
-      const _0x38f360 = _0x4465a5.match(/^([\w\-]+)=(.+)$/);
-      if (_0x38f360) {
-        const _0x27ec38 = _0x38f360[1];
-        let _0x94811c = decodeURIComponent(_0x38f360[2]);
-        _0x94811c === "true" && (_0x94811c = true);
-        _0x94811c === "false" && (_0x94811c = false);
-        _0x4c6aa8[_0x27ec38] = _0x94811c;
+      function _0x230e20(_0x5b5a9a, _0x30ad0f, _0x474081) {
+        if (!_0x30ad0f) {
+          console.log("[ICBC] 跳过 " + _0x5b5a9a + "，值为空");
+          return;
+        }
+        console.log("[ICBC] 尝试通过智能匹配填写 " + _0x5b5a9a + "（" + _0x474081 + "）：", _0x30ad0f);
+        const _0x4c04b2 = _0x227a60(_0x5b5a9a);
+        console.log("[ICBC] 智能匹配到的 " + _0x5b5a9a + " 元素：", _0x4c04b2);
+        _0x4c04b2 ? (_0x4c04b2.value = _0x30ad0f, _0x4c04b2.dispatchEvent(new Event("input", {
+          bubbles: true
+        })), _0x4c04b2.dispatchEvent(new Event("change", {
+          bubbles: true
+        })), console.log("[ICBC] " + _0x5b5a9a + " 填写成功，当前值：", _0x4c04b2.value)) : console.warn("[ICBC] 未通过智能匹配找到 " + _0x5b5a9a + " 对应的输入框");
       }
-    });
-    _0x3c612e(_0x4c6aa8);
-  }
+      _0x230e20("fullName", _0x1f6c77.name, "姓名");
+      _0x230e20("idNumber", _0x1f6c77.idcard, "证件号码");
+      _0x230e20("mobile", _0x1f6c77.phone, "手机号");
+      const _0x1f8384 = [_0x1f6c77.province, _0x1f6c77.city, _0x1f6c77.district].filter(Boolean).join("");
+      _0x230e20("address", _0x1f8384, "地址");
+      if (_0x1f6c77.quantity) {
+        console.log("[ICBC] 尝试填写预约数量：", _0x1f6c77.quantity);
+        const _0x4fe50e = ["input[placeholder*=\"预约数量\"]", "input[placeholder*=\"数量\"]", "input[placeholder*=\"份额\"]", "input[type=\"number\"]"];
+        let _0x108379 = null;
+        for (const _0x2066e6 of _0x4fe50e) {
+          _0x108379 = document.querySelector(_0x2066e6);
+          if (_0x108379) {
+            console.log("[ICBC] 通过选择器找到预约数量输入框：", _0x2066e6, _0x108379);
+            break;
+          }
+        }
+        if (!_0x108379) {
+          const _0x3611a0 = Array.from(document.querySelectorAll("input"));
+          console.log("[ICBC] 预约数量未通过选择器找到，遍历 input 进一步尝试...");
+          for (const _0x53e291 of _0x3611a0) {
+            const _0x40ba17 = (_0x53e291.placeholder || "").trim();
+            if (_0x40ba17.includes("数量") || _0x40ba17.includes("份") || _0x40ba17.includes("预约")) {
+              _0x108379 = _0x53e291;
+              console.log("[ICBC] 通过 placeholder 猜测的预约数量输入框：", _0x53e291);
+              break;
+            }
+          }
+        }
+        _0x108379 ? (_0x108379.value = String(_0x1f6c77.quantity), _0x108379.dispatchEvent(new Event("input", {
+          bubbles: true
+        })), _0x108379.dispatchEvent(new Event("change", {
+          bubbles: true
+        })), console.log("[ICBC] 预约数量填写成功，当前值：", _0x108379.value)) : console.warn("[ICBC] 未找到预约数量输入框，请检查页面结构或占位符文本");
+      }
+      if (_0x1f6c77.exchangeTime) {
+        const _0x19efa7 = this.normalizeExchangeDate(_0x1f6c77.exchangeTime);
+        if (_0x19efa7) {
+          console.log("[ICBC] 尝试填写兑换日期：", _0x19efa7);
+          const _0x29e34f = this.findExchangeDateInput() || document.querySelector("input[type=\"date\"]");
+          _0x29e34f ? (_0x29e34f.value = _0x19efa7, _0x29e34f.dispatchEvent(new Event("input", {
+            bubbles: true
+          })), _0x29e34f.dispatchEvent(new Event("change", {
+            bubbles: true
+          })), console.log("[ICBC] 兑换日期填写成功，当前值：", _0x29e34f.value)) : console.warn("[ICBC] 未找到兑换日期输入框，请检查页面结构或占位符文本");
+        } else {
+          console.warn("[ICBC] 兑换日期格式不正确：", _0x1f6c77.exchangeTime);
+        }
+      }
+      const _0x16cc70 = _0x1f6c77.province || _0x1f6c77.city || _0x1f6c77.district || _0x1f6c77.branch;
+      if (_0x16cc70) {
+        const _0x5ac5ff = await this.fillICBCBranchSelectors(_0x1f6c77);
+        let _0xa3de32 = _0x5ac5ff.success;
+        if (!_0xa3de32 && _0x1f6c77.branch) {
+          const _0x5965e7 = [_0x1f6c77.province, _0x1f6c77.city, _0x1f6c77.branch].filter(Boolean).join("/");
+          console.log("[ICBC] 专用选择失败，尝试 BranchFinder：", _0x5965e7);
+          if (window.__branchFinder__?.["autoFillBranch"]) {
+            try {
+              const _0x1719bb = await window.__branchFinder__.autoFillBranch(_0x5965e7, {
+                enableLog: BRANCH_FINDER_LOG_ENABLED
+              });
+              console.log("[ICBC] BranchFinder 返回：", _0x1719bb);
+              _0xa3de32 = !!_0x1719bb?.["success"];
+            } catch (_0x3f76ba) {
+              console.warn("[ICBC] BranchFinder 执行报错：", _0x3f76ba);
+            }
+          }
+        }
+        if (!_0xa3de32 && _0x1f6c77.branch) {
+          console.log("[ICBC] BranchFinder 也失败，使用回退逻辑定位网点输入框...");
+          const _0x45752a = this.findBranchInputFallback();
+          console.log("[ICBC] 回退逻辑匹配到的网点输入框：", _0x45752a);
+          const _0x2e4507 = [_0x1f6c77.province, _0x1f6c77.city, _0x1f6c77.branch].filter(Boolean).join("/");
+          _0x45752a ? (_0x45752a.value = _0x2e4507, _0x45752a.dispatchEvent(new Event("input", {
+            bubbles: true
+          })), _0x45752a.dispatchEvent(new Event("change", {
+            bubbles: true
+          })), console.log("[ICBC] 网点填写成功，当前值：", _0x45752a.value)) : console.warn("[ICBC] 未找到网点输入框，请检查页面上与“网点/兑换网点”相关的字段");
+        }
+      }
+      this.autoCheckAgreementCheckboxes();
+      console.log("[ICBC] fillForm 执行完成（智能匹配逻辑结束）");
+    },
+    delay(_0x4e7550) {
+      return new Promise(_0x46f763 => setTimeout(_0x46f763, _0x4e7550));
+    },
+    findSelectInputByPlaceholder(_0x288d94 = []) {
+      const _0x365340 = Array.from(document.querySelectorAll("input.el-input__inner"));
+      return _0x365340.find(_0x346e38 => {
+        const _0x424e91 = (_0x346e38.placeholder || "").trim();
+        return _0x288d94.some(_0x4a6344 => _0x424e91.includes(_0x4a6344));
+      });
+    },
+    autoCheckAgreementCheckboxes() {
+      try {
+        const _0x1e5b94 = ["阅读", "同意", "协议", "声明", "须知", "知悉", "约定"];
+        const _0x1afcfe = new Set();
+        const _0x5ca0b3 = _0x3e13df => {
+          if (!_0x3e13df || _0x3e13df.disabled) {
+            return;
+          }
+          const _0x4b807d = _0x3e13df.closest(".el-checkbox") || _0x3e13df.parentElement || _0x3e13df;
+          const _0x23335f = _0x4b807d.querySelector(".el-checkbox__input") || _0x4b807d;
+          const _0x3bc495 = _0x4b807d.querySelector(".el-checkbox__label");
+          if (_0x3e13df.checked || _0x23335f.classList.contains("is-checked")) {
+            return;
+          }
+          const _0x2bc554 = _0x3bc495 || _0x23335f;
+          _0x2bc554.click();
+          _0x1afcfe.add(_0x3e13df);
+        };
+        const _0x1b1a6c = Array.from(document.querySelectorAll("label, [role='label'], .label, [class*='label']"));
+        for (const _0x477a02 of _0x1b1a6c) {
+          const _0x64520e = (_0x477a02.textContent || "").trim();
+          if (!_0x64520e) {
+            continue;
+          }
+          if (!_0x1e5b94.some(_0x29de08 => _0x64520e.includes(_0x29de08))) {
+            continue;
+          }
+          let _0x54ff7f = null;
+          const _0x2fd056 = _0x477a02.getAttribute("for");
+          if (_0x2fd056) {
+            const _0x51de80 = document.getElementById(_0x2fd056);
+            _0x51de80 && _0x51de80.type === "checkbox" && (_0x54ff7f = _0x51de80);
+          }
+          if (!_0x54ff7f) {
+            const _0x98d035 = _0x477a02.closest(".el-form-item, .el-checkbox, .el-col, .el-row") || _0x477a02.parentElement;
+            _0x98d035 && (_0x54ff7f = _0x98d035.querySelector("input[type='checkbox']") || _0x98d035.querySelector(".el-checkbox input[type='checkbox']"));
+          }
+          _0x54ff7f && !_0x54ff7f.disabled && !_0x1afcfe.has(_0x54ff7f) && (console.log("[ICBC] 自动勾选协议勾选框（通过 label 匹配）：", _0x64520e, _0x54ff7f), _0x5ca0b3(_0x54ff7f));
+        }
+        const _0x39c2ea = Array.from(document.querySelectorAll("input[type='checkbox']"));
+        for (const _0x34634f of _0x39c2ea) {
+          if (_0x1afcfe.has(_0x34634f) || _0x34634f.disabled) {
+            continue;
+          }
+          const _0x30358a = _0x34634f.closest(".el-checkbox, .el-form-item, .el-col, .el-row") || _0x34634f.parentElement;
+          let _0x673813 = "";
+          _0x30358a && (_0x673813 = (_0x30358a.textContent || "").trim());
+          if (!_0x673813) {
+            continue;
+          }
+          if (!_0x1e5b94.some(_0x108af6 => _0x673813.includes(_0x108af6))) {
+            continue;
+          }
+          console.log("[ICBC] 自动勾选协议勾选框（通过周围文本匹配）：", _0x673813, _0x34634f);
+          _0x5ca0b3(_0x34634f);
+        }
+      } catch (_0x4fa1ff) {
+        console.warn("[ICBC] 自动勾选协议勾选框出错：", _0x4fa1ff);
+      }
+    },
+    getVisibleElSelectDropdown() {
+      const _0x5c915a = Array.from(document.querySelectorAll(".el-select-dropdown.el-popper"));
+      return _0x5c915a.find(_0x555ad3 => {
+        const _0x5e5278 = window.getComputedStyle(_0x555ad3);
+        if (_0x5e5278.display === "none" || _0x5e5278.visibility === "hidden" || parseFloat(_0x5e5278.opacity) === 0) {
+          return false;
+        }
+        return _0x555ad3.querySelectorAll(".el-select-dropdown__item").length > 0;
+      });
+    },
+    async selectOptionFromElDropdown(_0x28e5a4, _0x40e601) {
+      if (!_0x40e601) {
+        return {
+          success: true,
+          skipped: true
+        };
+      }
+      const _0x5510d0 = this.findSelectInputByPlaceholder(_0x28e5a4);
+      if (!_0x5510d0) {
+        return {
+          success: false,
+          message: "未找到包含 " + _0x28e5a4.join("/") + " 的下拉输入框"
+        };
+      }
+      _0x5510d0.click();
+      await this.delay(150);
+      let _0x5094c8 = this.getVisibleElSelectDropdown();
+      let _0x228195 = 0;
+      while (!_0x5094c8 && _0x228195 < 10) {
+        await this.delay(150);
+        _0x5094c8 = this.getVisibleElSelectDropdown();
+        _0x228195++;
+      }
+      if (!_0x5094c8) {
+        return {
+          success: false,
+          message: "未检测到可见的下拉面板"
+        };
+      }
+      const _0x54ce63 = Array.from(_0x5094c8.querySelectorAll(".el-select-dropdown__item"));
+      if (!_0x54ce63.length) {
+        return {
+          success: false,
+          message: "下拉面板没有可选项"
+        };
+      }
+      const _0x3238a1 = _0x51f520 => _0x51f520.replace(/省|市|区|县|分行|支行|营业部|网点/g, "").trim();
+      const _0x351c2d = _0x3238a1(_0x40e601);
+      let _0x1cd547 = null;
+      let _0x4769a3 = 0;
+      _0x54ce63.forEach(_0x42f3af => {
+        const _0x29daea = (_0x42f3af.textContent || "").trim();
+        if (!_0x29daea) {
+          return;
+        }
+        const _0x2bc7cd = _0x3238a1(_0x29daea);
+        let _0x979524 = 0;
+        if (_0x29daea === _0x40e601) {
+          _0x979524 = 1000;
+        } else {
+          if (_0x29daea.includes(_0x40e601)) {
+            _0x979524 = 800;
+          } else {
+            if (_0x40e601.includes(_0x29daea)) {
+              _0x979524 = 700;
+            } else {
+              if (_0x2bc7cd && _0x2bc7cd === _0x351c2d) {
+                _0x979524 = 900;
+              } else {
+                if (_0x2bc7cd && _0x351c2d && _0x2bc7cd.includes(_0x351c2d)) {
+                  _0x979524 = 600;
+                }
+              }
+            }
+          }
+        }
+        _0x979524 > _0x4769a3 && (_0x4769a3 = _0x979524, _0x1cd547 = _0x42f3af);
+      });
+      if (!_0x1cd547) {
+        return {
+          success: false,
+          message: "未在下拉中匹配到 \"" + _0x40e601 + "\""
+        };
+      }
+      _0x1cd547.scrollIntoView({
+        block: "center"
+      });
+      await this.delay(100);
+      _0x1cd547.click();
+      await this.delay(150);
+      return {
+        success: true,
+        text: (_0x1cd547.textContent || "").trim()
+      };
+    },
+    async fillICBCBranchSelectors(_0x48fbe5) {
+      console.log("[ICBC] 专用选择器开始：省市区+网点");
+      const _0x29bdbb = [{
+        key: "province",
+        placeholderKeywords: ["请选择省份", "省份"],
+        value: _0x48fbe5.province
+      }, {
+        key: "city",
+        placeholderKeywords: ["请选择城市", "城市"],
+        value: _0x48fbe5.city
+      }, {
+        key: "district",
+        placeholderKeywords: ["请选择区县", "区县", "请选择区域"],
+        value: _0x48fbe5.district
+      }, {
+        key: "branch",
+        placeholderKeywords: ["请选择网点", "选择预约网点", "兑换网点"],
+        value: _0x48fbe5.branch
+      }];
+      let _0x3fbc1e = 0;
+      for (const _0x2c3105 of _0x29bdbb) {
+        if (!_0x2c3105.value) {
+          continue;
+        }
+        console.log("[ICBC] 选择 " + _0x2c3105.key + ": " + _0x2c3105.value);
+        const _0xb63f6a = await this.selectOptionFromElDropdown(_0x2c3105.placeholderKeywords, _0x2c3105.value);
+        console.log("[ICBC] " + _0x2c3105.key + " 结果：", _0xb63f6a);
+        if (!_0xb63f6a.success) {
+          console.warn("[ICBC] " + _0x2c3105.key + " 选择失败:", _0xb63f6a.message);
+          return {
+            success: false,
+            message: _0xb63f6a.message,
+            failedStep: _0x2c3105.key
+          };
+        }
+        _0x3fbc1e++;
+        await this.delay(100);
+      }
+      if (_0x3fbc1e === 0) {
+        console.log("[ICBC] 未提供省/市/区/网点信息，跳过专用选择器");
+        return {
+          success: false,
+          message: "无可选信息"
+        };
+      }
+      console.log("[ICBC] 专用选择器执行完成");
+      return {
+        success: true
+      };
+    },
+    normalizeExchangeDate(_0x32e46e) {
+      if (!_0x32e46e) {
+        return "";
+      }
+      const _0x469869 = _0x32e46e.trim();
+      if (!_0x469869) {
+        return "";
+      }
+      if (/^\d{4}-\d{2}-\d{2}$/.test(_0x469869)) {
+        return _0x469869;
+      }
+      const _0x36fa38 = _0x469869.match(/^(\d{4}-\d{2}-\d{2})/);
+      return _0x36fa38 ? _0x36fa38[1] : "";
+    },
+    findExchangeDateInput() {
+      const _0x4f4321 = ["input[placeholder*=\"兑换日期\"]", "input[placeholder*=\"兑换时间\"]", "input[placeholder*=\"预约日期\"]", "input[placeholder*=\"预约时间\"]"];
+      for (const _0x2661f6 of _0x4f4321) {
+        const _0x2924d7 = document.querySelector(_0x2661f6);
+        if (_0x2924d7 && !_0x2924d7.disabled && _0x2924d7.offsetParent !== null) {
+          return _0x2924d7;
+        }
+      }
+      const _0x4befe2 = Array.from(document.querySelectorAll("label, [role='label'], .label, [class*='label']"));
+      for (const _0x9cafa2 of _0x4befe2) {
+        const _0x2312bc = (_0x9cafa2.textContent || "").trim();
+        if (!_0x2312bc) {
+          continue;
+        }
+        if (!_0x2312bc.includes("兑换") && !_0x2312bc.includes("预约")) {
+          continue;
+        }
+        if (!_0x2312bc.includes("日期") && !_0x2312bc.includes("时间")) {
+          continue;
+        }
+        const _0xf11ac6 = _0x9cafa2.getAttribute("for");
+        if (_0xf11ac6) {
+          const _0x15a500 = document.getElementById(_0xf11ac6);
+          if (_0x15a500 && _0x15a500.tagName === "INPUT") {
+            return _0x15a500;
+          }
+        }
+        const _0x4cc43a = _0x9cafa2.parentElement?.["querySelector"]("input");
+        if (_0x4cc43a) {
+          return _0x4cc43a;
+        }
+      }
+      return null;
+    },
+    findBranchInputFallback() {
+      const _0x31df5f = ["兑换网点", "网点", "选择网点", "兑换点", "branch"];
+      const _0x47132f = ["证件类型", "证件", "身份证", "手机", "手机号", "验证码", "手机号码"];
+      const _0x23139b = Array.from(document.querySelectorAll("label, [role='label'], .label, [class*='label']"));
+      for (const _0x749fd4 of _0x23139b) {
+        const _0x561ab6 = (_0x749fd4.textContent || "").trim();
+        if (!_0x561ab6) {
+          continue;
+        }
+        const _0xb666c0 = _0x561ab6.toLowerCase();
+        if (_0x47132f.some(_0x146648 => _0xb666c0.includes(_0x146648.toLowerCase()))) {
+          continue;
+        }
+        if (!_0x31df5f.some(_0x42f1d6 => _0xb666c0.includes(_0x42f1d6.toLowerCase()))) {
+          continue;
+        }
+        const _0x59f83c = _0x749fd4.getAttribute("for");
+        if (_0x59f83c) {
+          const _0x5adb79 = document.getElementById(_0x59f83c);
+          if (_0x5adb79 && (_0x5adb79.tagName === "INPUT" || _0x5adb79.tagName === "SELECT")) {
+            return _0x5adb79;
+          }
+        }
+        const _0x35ccf7 = _0x749fd4.parentElement;
+        if (_0x35ccf7) {
+          const _0x5a6b57 = _0x35ccf7.querySelectorAll("input[type='text'], input:not([type]), select, [role='textbox'], [role='combobox']");
+          for (const _0x301db3 of _0x5a6b57) {
+            if (_0x301db3.offsetParent !== null && !_0x301db3.disabled) {
+              return _0x301db3;
+            }
+          }
+        }
+        let _0x139f65 = _0x749fd4.nextElementSibling;
+        while (_0x139f65) {
+          const _0xe473a8 = _0x139f65.querySelectorAll("input[type='text'], input:not([type]), select, [role='textbox'], [role='combobox']");
+          if (_0xe473a8.length > 0) {
+            for (const _0x308647 of _0xe473a8) {
+              if (_0x308647.offsetParent !== null && !_0x308647.disabled) {
+                return _0x308647;
+              }
+            }
+          }
+          _0x139f65 = _0x139f65.nextElementSibling;
+        }
+      }
+      const _0x363fc9 = Array.from(document.querySelectorAll("input[type='text'], input:not([type]), select, [role='textbox'], [role='combobox']"));
+      for (const _0x4fc4ae of _0x363fc9) {
+        const _0x1e973f = ((_0x4fc4ae.placeholder || "") + " " + (_0x4fc4ae.name || "") + " " + (_0x4fc4ae.id || "") + " " + (_0x4fc4ae.getAttribute("aria-label") || "")).toLowerCase();
+        if (_0x47132f.some(_0x2b6633 => _0x1e973f.includes(_0x2b6633.toLowerCase()))) {
+          continue;
+        }
+        if (_0x31df5f.some(_0x11ef99 => _0x1e973f.includes(_0x11ef99.toLowerCase())) && _0x4fc4ae.offsetParent !== null && !_0x4fc4ae.disabled) {
+          return _0x4fc4ae;
+        }
+      }
+      return null;
+    },
+    async submit() {
+      console.log("[ICBC] submit 被调用");
+      const _0x4e1caa = this.getSelectorMap();
+      let _0x4b5df0 = document.querySelector(_0x4e1caa.submitButton);
+      console.log("[ICBC] 提交按钮元素：", _0x4b5df0);
+      console.log("[ICBC] 提交按钮选择器：", _0x4e1caa.submitButton);
+      if (!_0x4b5df0) {
+        const _0x298376 = Array.from(document.querySelectorAll("button, .el-button, .btn, [role='button']"));
+        const _0x2a1823 = ["提交", "确认", "下一步", "预约"];
+        _0x4b5df0 = _0x298376.find(_0x4ea20c => {
+          const _0x2b7358 = (_0x4ea20c.textContent || "").trim();
+          if (!_0x2b7358) {
+            return false;
+          }
+          return _0x2a1823.some(_0x320661 => _0x2b7358.includes(_0x320661));
+        });
+        console.log("[ICBC] 通过文本兜底找到的提交按钮：", _0x4b5df0);
+      }
+      _0x4b5df0 ? (console.log("[ICBC] 点击提交按钮"), _0x4b5df0.click(), _0x4b5df0.dispatchEvent(new MouseEvent("click", {
+        bubbles: true,
+        cancelable: true
+      })), console.log("[ICBC] 提交按钮已点击")) : console.warn("[ICBC] 未找到提交按钮");
+    },
+    verifyResult: async () => document.body.innerText.includes("预约成功") || document.body.innerText.includes("提交成功")
+  };
+  window.shuixian.register(_0x361593);
 })();
