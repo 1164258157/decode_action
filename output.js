@@ -1,4 +1,4 @@
-//Sat Jan 10 2026 06:56:43 GMT+0000 (Coordinated Universal Time)
+//Sat Jan 10 2026 07:01:05 GMT+0000 (Coordinated Universal Time)
 //Base:<url id="cv1cref6o68qmpt26ol0" type="url" status="parsed" title="GitHub - echo094/decode-js: JS混淆代码的AST分析工具 AST analysis tool for obfuscated JS code" wc="2165">https://github.com/echo094/decode-js</url>
 //Modify:<url id="cv1cref6o68qmpt26olg" type="url" status="parsed" title="GitHub - smallfawn/decode_action: 世界上本来不存在加密，加密的人多了，也便成就了解密" wc="741">https://github.com/smallfawn/decode_action</url>
 !function () {
@@ -11,597 +11,1181 @@
   console.debug = function () {};
   console.info = function () {};
   console.error = function () {};
-  const _0x5683f5 = "JP_GET_CONFIG";
-  const _0x525230 = "JP_SET_CONFIG";
-  async function _0x5c65b4() {
-    return await new Promise(_0x3d0367 => {
-      chrome.runtime.sendMessage({
-        type: _0x5683f5
-      }, _0x3d0367);
-    });
-  }
-  async function _0x3e7ab5(_0x24494e) {
-    {
-      return await new Promise(_0x4815e1 => {
-        chrome.runtime.sendMessage({
-          type: _0x525230,
-          payload: _0x24494e
-        }, _0x4815e1);
-      });
+  (function () {
+    const _0x5e51ac = "undefined" != typeof self ? self : this;
+    if (_0x5e51ac.__JP_BG_ANTI_INJECT_INIT__) {
+      return;
     }
-  }
-  function _0xb8fad9(_0x1f9e04, _0x5c2e71 = {}, _0x44ef83 = []) {
-    const _0x36446b = document.createElement(_0x1f9e04);
-    Object.entries(_0x5c2e71).forEach(([_0x78c165, _0x295461]) => {
-      "class" === _0x78c165 ? _0x36446b.className = _0x295461 : "text" === _0x78c165 ? _0x36446b.textContent = _0x295461 : _0x36446b.setAttribute(_0x78c165, _0x295461);
-    });
-    _0x44ef83.forEach(_0x101286 => _0x36446b.appendChild(_0x101286));
-    return _0x36446b;
-  }
-  function _0x2aa451(_0x3d8349, _0x54c970, _0xda6f3d, _0x2b637b = "text", _0x5dd91e = {}) {
-    const _0x2e780c = {
-      value: _0x54c970 ?? "",
-      type: _0x2b637b,
-      class: _0x5dd91e.inputClass || ""
-    };
-    _0x5dd91e.placeholder && (_0x2e780c.placeholder = _0x5dd91e.placeholder);
-    const _0xe62c9a = _0xb8fad9("input", _0x2e780c);
-    let _0x56ada1 = null;
-    const _0x29dda7 = _0xb8fad9("div", {
-      class: "validation-error",
-      style: "display: none; color: #ef4444; font-size: 12px; margin-top: 4px;"
-    });
-    if (null != _0x54c970) {
-      if ("date" === _0x2b637b && _0x54c970) {
-        const _0x24fb8d = String(_0x54c970);
-        if (_0x24fb8d.includes("T") || _0x24fb8d.includes(" ")) {
-          const _0x6a5709 = _0x24fb8d.split(/[T\s]/)[0];
-          _0xe62c9a.value = _0x6a5709;
-        } else {
-          _0xe62c9a.value = _0x24fb8d;
-        }
-      } else {
-        if ("time" === _0x2b637b && _0x54c970) {
-          {
-            const _0xf9a04c = String(_0x54c970);
-            if (_0xf9a04c.includes("T") || _0xf9a04c.includes(" ")) {
-              const _0x538705 = _0xf9a04c.split(/[T\s]/)[1] || _0xf9a04c.split(/[T\s]/)[0];
-              _0xe62c9a.value = _0x538705.substring(0, 5);
-            } else {
-              _0xe62c9a.value = _0xf9a04c.substring(0, 5);
-            }
-          }
-        } else {
-          _0xe62c9a.value = _0x54c970;
-        }
+    _0x5e51ac.__JP_BG_ANTI_INJECT_INIT__ = true;
+    const _0x2cdc6f = "[JP Anti-Inject BG]";
+    function _0x4cc767(_0x3ad849, _0x5368f0) {
+      if ("function" != typeof _0x3ad849) {
+        return false;
       }
-    }
-    const _0x1cce59 = () => {
-      {
-        let _0x323cd7 = _0xe62c9a.value;
-        if (_0x5dd91e.validateIdNumber) {
-          const _0x24ea02 = function (_0xbba3f0) {
-            if (!_0xbba3f0 || "" === _0xbba3f0.trim()) {
-              return {
-                valid: true,
-                message: ""
-              };
-            }
-            const _0x46f2ae = _0xbba3f0.trim();
-            return /^(\d{15}|\d{18}|(\d{17}[xX]))$/.test(_0x46f2ae) ? {
-              valid: true,
-              message: ""
-            } : {
-              valid: false,
-              message: "请输入正确的身份证号（15位或18位数字，18位最后一位可以是X）"
-            };
-          }(_0x323cd7);
-          _0x56ada1 = _0x24ea02.valid ? null : _0x24ea02.message;
-        } else {
-          if (_0x5dd91e.validateMobile) {
-            {
-              const _0x55d1b4 = function (_0x2068a5) {
-                if (!_0x2068a5 || "" === _0x2068a5.trim()) {
-                  return {
-                    valid: true,
-                    message: ""
-                  };
-                }
-                const _0x5aed23 = _0x2068a5.trim();
-                return /^1[3-9]\d{9}$/.test(_0x5aed23) ? {
-                  valid: true,
-                  message: ""
-                } : {
-                  valid: false,
-                  message: "请输入正确的手机号（11位数字，以1开头）"
-                };
-              }(_0x323cd7);
-              _0x56ada1 = _0x55d1b4.valid ? null : _0x55d1b4.message;
-            }
-          }
-        }
-        _0x56ada1 ? (_0x29dda7.textContent = _0x56ada1, _0x29dda7.style.display = "block", _0xe62c9a.style.borderColor = "#ef4444", _0xe62c9a.style.backgroundColor = "#fef2f2") : (_0x29dda7.style.display = "none", _0xe62c9a.style.borderColor = "", _0xe62c9a.style.backgroundColor = "");
-        return !_0x56ada1;
-      }
-    };
-    _0xe62c9a.oninput = () => {
-      {
-        let _0x371a10 = _0xe62c9a.value;
-        if ("date" === _0x2b637b && _0x371a10 && (_0x371a10.includes("T") || _0x371a10.includes(" ")) && (_0x371a10 = _0x371a10.split(/[T\s]/)[0], _0xe62c9a.value = _0x371a10), "time" === _0x2b637b && _0x371a10 && (_0x371a10.includes("T") || _0x371a10.includes(" "))) {
-          const _0xde6977 = _0x371a10.split(/[T\s]/)[1] || _0x371a10.split(/[T\s]/)[0];
-          _0x371a10 = _0xde6977.substring(0, 5);
-          _0xe62c9a.value = _0x371a10;
-        }
-        _0x1cce59();
-        _0xda6f3d(_0x371a10);
-      }
-    };
-    _0xe62c9a.onblur = () => {
-      _0x1cce59();
-    };
-    (_0x5dd91e.validateIdNumber || _0x5dd91e.validateMobile) && _0x1cce59();
-    const _0xf7eafd = _0x7d8098(_0x3d8349, _0xe62c9a);
-    (_0x5dd91e.validateIdNumber || _0x5dd91e.validateMobile) && _0xf7eafd.appendChild(_0x29dda7);
-    return _0xf7eafd;
-  }
-  function _0x7d8098(_0x418a21, _0x1c50ee) {
-    const _0x582ae1 = _0xb8fad9("div");
-    _0x582ae1.appendChild(_0xb8fad9("label", {
-      text: _0x418a21
-    }));
-    _0x582ae1.appendChild(_0x1c50ee);
-    return _0x582ae1;
-  }
-  function _0x2c2909(_0x453659, _0x6dc293) {
-    const _0x390d62 = _0xb8fad9("button", {
-      class: "btn",
-      text: _0x453659
-    });
-    _0x390d62.onclick = _0x6dc293;
-    return _0x390d62;
-  }
-  function _0x289b1b(_0xee960a) {
-    window.__cfg = _0xee960a;
-    (function (_0x2366d5) {
-      const _0x1253f0 = document.getElementById("profiles");
-      _0x1253f0.innerHTML = "";
-      const _0x57a2e3 = 20;
-      let _0x57ad41 = Array.isArray(_0x2366d5.profiles) ? _0x2366d5.profiles.slice() : [];
-      console.log("[Options] 渲染前 profiles 数量:", _0x57ad41.length);
-      console.log("[Options] 渲染前 profiles 数据:", _0x57ad41.map(_0x18880c => ({
-        id: _0x18880c.id,
-        alias: _0x18880c.alias,
-        fullName: _0x18880c.fullName,
-        hasData: !!(_0x18880c.fullName || _0x18880c.idNumber || _0x18880c.mobile)
-      })));
-      _0x57ad41.length > _0x57a2e3 && (_0x57ad41 = _0x57ad41.slice(0, _0x57a2e3));
-      _0x2366d5.profiles = _0x57ad41;
-      console.log("[Options] 渲染后 profiles 数量:", _0x57ad41.length);
-      const _0x14488a = document.getElementById("profileCount");
-      _0x14488a && (_0x57ad41.filter(_0x3582bf => _0x3582bf.fullName || _0x3582bf.idNumber || _0x3582bf.mobile).length, _0x14488a.textContent = _0x57ad41.length + "/20 人");
-      const _0xe46f75 = document.getElementById("addProfile");
-      _0xe46f75 && (_0xe46f75.style.display = "flex", _0x57ad41.length >= _0x57a2e3 ? (_0xe46f75.disabled = true, _0xe46f75.title = "最多只能添加 20 个人员", _0xe46f75.style.opacity = "0.5", _0xe46f75.style.cursor = "not-allowed") : (_0xe46f75.disabled = false, _0xe46f75.title = "添加抢单人员", _0xe46f75.style.opacity = "1", _0xe46f75.style.cursor = "pointer"), _0xe46f75.onclick = () => {
-        if (_0x2366d5.profiles.length >= _0x57a2e3) {
-          return void alert("最多只能添加 20 个人员");
-        }
-        const _0x3935aa = "p_" + Math.random().toString(36).slice(2, 8);
-        _0x2366d5.profiles.push({
-          id: _0x3935aa,
-          fullName: ""
-        });
-        _0x289b1b(_0x2366d5);
-      });
-      _0x57ad41.forEach((_0x4542f8, _0x23669e) => {
-        const _0x606a96 = _0xb8fad9("div", {
-          class: "card profile-card"
-        });
-        const _0x4d0a3d = _0xb8fad9("div", {
-          class: "profile-name",
-          style: "cursor: pointer;"
-        });
-        const _0x8006eb = _0x4542f8.alias || _0x4542f8.fullName || _0x4542f8.id || "人员 " + (_0x23669e + 1);
-        _0x4d0a3d.textContent = _0x8006eb;
-        _0x4d0a3d.title = "点击填充 \"" + _0x8006eb + "\" 的信息到当前页面表单";
-        const _0x1b9004 = async () => {
-          try {
-            const _0x2d57e0 = _0x4d0a3d.textContent;
-            _0x4d0a3d.textContent = "填充中...";
-            _0x4d0a3d.style.color = "#3b82f6";
-            const [_0x37c101] = await chrome.tabs.query({
-              active: true,
-              currentWindow: true
-            });
-            if (!_0x37c101 || !_0x37c101.id) {
-              _0x4d0a3d.textContent = _0x2d57e0;
-              _0x4d0a3d.style.color = "";
-              return void alert("无法获取当前页面，请确保页面已加载完成。");
-            }
-            if (!["icbc", "ccb", "boc", "abchina", "bankcomm", "bocom", "psbc", "hxb"].some(_0xd8c410 => _0x37c101.url && (_0x37c101.url.includes(_0xd8c410) || _0x37c101.url.includes("银行"))) && !_0x37c101.url.startsWith("http")) {
-              _0x4d0a3d.textContent = _0x2d57e0;
-              _0x4d0a3d.style.color = "";
-              return void alert("当前页面不是银行预约页面，请先打开银行预约页面后再点击填充。");
-            }
-            chrome.tabs.sendMessage(_0x37c101.id, {
-              type: "JP_FILL",
-              payload: {
-                profile: _0x4542f8.id,
-                bank: null,
-                region: "",
-                submit: false
-              }
-            }, _0xe66332 => {
-              {
-                if (chrome.runtime.lastError) {
-                  console.error("填充失败:", chrome.runtime.lastError);
-                  _0x4d0a3d.textContent = "✗ 失败";
-                  _0x4d0a3d.style.color = "#ef4444";
-                  setTimeout(() => {
-                    _0x4d0a3d.textContent = _0x2d57e0;
-                    _0x4d0a3d.style.color = "";
-                  }, 2000);
-                  const _0x531fb6 = chrome.runtime.lastError.message;
-                  return void (_0x531fb6.includes("Could not establish connection") ? alert("无法连接到页面，请确保：\n1. 页面已完全加载\n2. 刷新页面后重试\n3. 当前页面支持自动填充") : alert("填充失败：" + _0x531fb6));
-                }
-                if (_0xe66332 && _0xe66332.ok) {
-                  _0x4d0a3d.textContent = "✓ 已填充";
-                  _0x4d0a3d.style.color = "#10b981";
-                  setTimeout(() => {
-                    _0x4d0a3d.textContent = _0x2d57e0;
-                    _0x4d0a3d.style.color = "";
-                  }, 2000);
-                } else {
-                  const _0x53515a = _0xe66332?.["error"] || "填充失败，请检查页面表单";
-                  _0x4d0a3d.textContent = "✗ 失败";
-                  _0x4d0a3d.style.color = "#ef4444";
-                  setTimeout(() => {
-                    {
-                      _0x4d0a3d.textContent = _0x2d57e0;
-                      _0x4d0a3d.style.color = "";
-                    }
-                  }, 2000);
-                  alert("填充失败：" + _0x53515a);
-                }
-              }
-            });
-          } catch (_0x5debf8) {
-            console.error("填充错误:", _0x5debf8);
-            const _0x1c4c8b = _0x4d0a3d.textContent;
-            _0x4d0a3d.textContent = "✗ 错误";
-            _0x4d0a3d.style.color = "#ef4444";
-            setTimeout(() => {
-              _0x4d0a3d.textContent = _0x1c4c8b;
-              _0x4d0a3d.style.color = "";
-            }, 2000);
-            alert("填充失败：" + _0x5debf8.message);
-          }
-        };
-        _0x4542f8.fullName || _0x4542f8.idNumber || _0x4542f8.mobile ? _0x4d0a3d.onclick = _0x1b9004 : (_0x4d0a3d.textContent = "人员 " + (_0x23669e + 1), _0x4d0a3d.style.opacity = "0.6", _0x4d0a3d.style.cursor = "default", _0x4d0a3d.title = "请先填写人员信息", _0x4d0a3d.onclick = null);
-        _0x606a96.appendChild(_0x4d0a3d);
-        const _0x5b1839 = _0xb8fad9("div", {
-          class: "profile-details"
-        });
-        _0x5b1839.appendChild(_0xb8fad9("div", {
-          class: "profile-form-grid"
-        }, [_0xb8fad9("div", {
-          class: "form-row form-row-2"
-        }, [_0x2aa451("别名/备注", _0x4542f8.alias || "", _0x11292d => {
-          _0x4542f8.alias = _0x11292d;
-          const _0x497ba9 = _0x11292d || _0x4542f8.fullName || "人员 " + (_0x23669e + 1);
-          _0x4d0a3d.textContent = _0x497ba9;
-          const _0xb6a7e3 = _0x11292d || _0x4542f8.fullName || _0x4542f8.idNumber || _0x4542f8.mobile;
-          _0x4d0a3d.style.opacity = _0xb6a7e3 ? "1" : "0.6";
-          _0x4d0a3d.style.cursor = _0xb6a7e3 ? "pointer" : "default";
-          _0x4d0a3d.title = _0xb6a7e3 ? "点击填充 \"" + _0x497ba9 + "\" 的信息到当前页面表单" : "请先填写人员信息";
-          _0x4d0a3d.onclick = _0xb6a7e3 ? _0x1b9004 : null;
-          const _0x1c05bd = document.getElementById("profileCount");
-          if (_0x1c05bd) {
-            const _0x2ee599 = _0x2366d5.profiles.filter(_0x50243c => _0x50243c.fullName || _0x50243c.idNumber || _0x50243c.mobile).length;
-            _0x1c05bd.textContent = _0x2ee599 + "/20 人";
-          }
-        })]), _0xb8fad9("div", {
-          class: "form-row form-row-2"
-        }, [_0x2aa451("姓名", _0x4542f8.fullName || "", _0x240ea1 => {
-          if (_0x4542f8.fullName = _0x240ea1, !_0x4542f8.alias) {
-            _0x4d0a3d.textContent = _0x240ea1 || "人员 " + (_0x23669e + 1);
-            const _0x176122 = _0x240ea1 || _0x4542f8.idNumber || _0x4542f8.mobile;
-            _0x4d0a3d.style.opacity = _0x176122 ? "1" : "0.6";
-            _0x4d0a3d.style.cursor = _0x176122 ? "pointer" : "default";
-            _0x4d0a3d.title = _0x176122 ? "点击填充 \"" + (_0x240ea1 || "人员 " + (_0x23669e + 1)) + "\" 的信息到当前页面表单" : "请先填写人员信息";
-            _0x4d0a3d.onclick = _0x176122 ? _0x1b9004 : null;
-          }
-          const _0x13e036 = document.getElementById("profileCount");
-          if (_0x13e036) {
-            const _0x4fb49c = _0x2366d5.profiles.filter(_0x3bd16e => _0x3bd16e.fullName || _0x3bd16e.idNumber || _0x3bd16e.mobile).length;
-            _0x13e036.textContent = _0x4fb49c + "/20 人";
-          }
-        })]), _0xb8fad9("div", {
-          class: "form-row form-row-2"
-        }, [_0x2aa451("证件号", _0x4542f8.idNumber || "", _0x9f429e => {
-          _0x4542f8.idNumber = _0x9f429e;
-          const _0x235d76 = _0x4542f8.fullName || _0x9f429e || _0x4542f8.mobile;
-          _0x4d0a3d.style.opacity = _0x235d76 ? "1" : "0.6";
-          _0x4d0a3d.style.cursor = _0x235d76 ? "pointer" : "default";
-          _0x4d0a3d.onclick = _0x235d76 ? _0x1b9004 : null;
-          const _0x51a1d3 = document.getElementById("profileCount");
-          if (_0x51a1d3) {
-            const _0x5e5c24 = _0x2366d5.profiles.filter(_0x3b660d => _0x3b660d.fullName || _0x3b660d.idNumber || _0x3b660d.mobile).length;
-            _0x51a1d3.textContent = _0x5e5c24 + "/20 人";
-          }
-        }, "text", {
-          validateIdNumber: true
-        })]), _0xb8fad9("div", {
-          class: "form-row form-row-2"
-        }, [_0x2aa451("手机号", _0x4542f8.mobile || "", _0x515da9 => {
-          _0x4542f8.mobile = _0x515da9;
-          const _0x5bde85 = _0x4542f8.fullName || _0x4542f8.idNumber || _0x515da9;
-          _0x4d0a3d.style.opacity = _0x5bde85 ? "1" : "0.6";
-          _0x4d0a3d.style.cursor = _0x5bde85 ? "pointer" : "default";
-          _0x4d0a3d.onclick = _0x5bde85 ? _0x1b9004 : null;
-          const _0x564d29 = document.getElementById("profileCount");
-          if (_0x564d29) {
-            const _0x14ba85 = _0x2366d5.profiles.filter(_0x247012 => _0x247012.fullName || _0x247012.idNumber || _0x247012.mobile).length;
-            _0x564d29.textContent = _0x14ba85 + "/20 人";
-          }
-        }, "text", {
-          validateMobile: true
-        })]), _0xb8fad9("div", {
-          class: "form-row form-row-full form-section-title"
-        }, [_0xb8fad9("div", {
-          class: "section-title",
-          text: "兑换地区"
-        })]), _0xb8fad9("div", {
-          class: "form-row form-row-3"
-        }, [_0x2aa451("省", _0x4542f8.province || "", _0x338e62 => _0x4542f8.province = _0x338e62)]), _0xb8fad9("div", {
-          class: "form-row form-row-3"
-        }, [_0x2aa451("市", _0x4542f8.city || "", _0x462b1a => _0x4542f8.city = _0x462b1a)]), _0xb8fad9("div", {
-          class: "form-row form-row-3"
-        }, [_0x2aa451("区/县", _0x4542f8.district || "", _0x204c93 => _0x4542f8.district = _0x204c93)]), _0xb8fad9("div", {
-          class: "form-row form-row-full"
-        }, [_0x2aa451("网点", _0x4542f8.address || "", _0x4e1dd6 => _0x4542f8.address = _0x4e1dd6)]), _0xb8fad9("div", {
-          class: "form-row form-row-full form-section-title"
-        }, [_0xb8fad9("div", {
-          class: "section-title",
-          text: "兑换信息"
-        })]), _0xb8fad9("div", {
-          class: "form-row form-row-2"
-        }, [_0x2aa451("兑换日期", _0x4542f8.exchangeDate || "", _0x3ba74e => _0x4542f8.exchangeDate = _0x3ba74e, "date")]), _0xb8fad9("div", {
-          class: "form-row form-row-2"
-        }, [_0x2aa451("兑换数量", _0x4542f8.exchangeQuantity || "", _0x4373eb => _0x4542f8.exchangeQuantity = _0x4373eb, "number")])]));
-        _0x606a96.appendChild(_0x5b1839);
-        const _0x2a7c44 = _0xb8fad9("div", {
-          class: "profile-actions"
-        }, [_0x2c2909("清空", () => {
-          Object.assign(_0x4542f8, {
-            id: _0x4542f8.id,
-            fullName: "",
-            alias: "",
-            idNumber: "",
-            mobile: "",
-            province: "",
-            city: "",
-            district: "",
-            address: "",
-            exchangeDate: "",
-            exchangeQuantity: ""
-          });
-          _0x289b1b(_0x2366d5);
-        }), _0x2c2909("删除", () => {
-          _0x2366d5.profiles.splice(_0x23669e, 1);
-          _0x289b1b(_0x2366d5);
-        })]);
-        _0x606a96.appendChild(_0x2a7c44);
-        _0x1253f0.appendChild(_0x606a96);
-      });
-    })(_0xee960a);
-    (function (_0x2e7785) {
-      {
-        const _0x244e55 = document.getElementById("multiOpenBindings");
-        if (!_0x244e55) {
-          return;
-        }
-        _0x244e55.innerHTML = "";
-        const _0x3f29bb = 15;
-        let _0x5c7226 = Array.isArray(_0x2e7785.multiOpenBindings) ? _0x2e7785.multiOpenBindings.slice() : [];
-        _0x5c7226.length > _0x3f29bb && (_0x5c7226 = _0x5c7226.slice(0, _0x3f29bb));
-        _0x2e7785.multiOpenBindings = _0x5c7226;
-        const _0x634fda = document.getElementById("bindingCount");
-        _0x634fda && (_0x634fda.textContent = _0x5c7226.length + "/15 个");
-        const _0x3091a2 = document.getElementById("addBinding");
-        if (_0x3091a2 && (_0x3091a2.style.display = "flex", _0x5c7226.length >= _0x3f29bb ? (_0x3091a2.disabled = true, _0x3091a2.title = "最多只能添加 15 个绑定", _0x3091a2.style.opacity = "0.5", _0x3091a2.style.cursor = "not-allowed") : (_0x3091a2.disabled = false, _0x3091a2.title = "添加多开绑定", _0x3091a2.style.opacity = "1", _0x3091a2.style.cursor = "pointer"), _0x3091a2.onclick = () => {
-          {
-            if (_0x2e7785.multiOpenBindings.length >= _0x3f29bb) {
-              return void alert("最多只能添加 15 个绑定");
-            }
-            const _0x1124da = (_0x2e7785.profiles || []).filter(_0x1ca6bf => _0x1ca6bf.fullName || _0x1ca6bf.idNumber || _0x1ca6bf.mobile);
-            if (0 === _0x1124da.length) {
-              return void alert("请先添加至少一个人员信息");
-            }
-            const _0x4f34da = {
-              id: "binding_" + Math.random().toString(36).slice(2, 8),
-              profileId: _0x1124da[0].id,
-              url: ""
-            };
-            _0x2e7785.multiOpenBindings.push(_0x4f34da);
-            _0x289b1b(_0x2e7785);
-          }
-        }), _0x5c7226.forEach((_0xed245b, _0x591420) => {
-          const _0xfdf3f0 = _0xb8fad9("div", {
-            class: "card profile-card binding-card"
-          });
-          const _0x55f63b = (_0x2e7785.profiles || []).find(_0x163f05 => _0x163f05.id === _0xed245b.profileId);
-          const _0x3757c5 = _0x55f63b ? _0x55f63b.alias || _0x55f63b.fullName || "人员 " + (_0x591420 + 1) : "未找到人员";
-          const _0x2f9e65 = _0xb8fad9("div", {
-            class: "profile-name",
-            style: "cursor: default;"
-          });
-          _0x2f9e65.textContent = "绑定 " + (_0x591420 + 1) + ": " + _0x3757c5;
-          _0xfdf3f0.appendChild(_0x2f9e65);
-          const _0x58264d = _0xb8fad9("div", {
-            class: "profile-details"
-          });
-          _0x58264d.appendChild(_0xb8fad9("div", {
-            class: "profile-form-grid"
-          }, [_0xb8fad9("div", {
-            class: "form-row form-row-full"
-          }, [_0x7d8098("绑定人员", (() => {
-            {
-              const _0x22614c = _0xb8fad9("select", {
-                class: "binding-profile-select"
-              });
-              const _0x2c43fd = (_0x2e7785.profiles || []).filter(_0xae0b94 => _0xae0b94.fullName || _0xae0b94.idNumber || _0xae0b94.mobile);
-              if (_0x2c43fd.forEach(_0x3e017b => {
-                const _0x48a602 = _0xb8fad9("option", {
-                  value: _0x3e017b.id,
-                  text: _0x3e017b.alias || _0x3e017b.fullName || _0x3e017b.id
-                });
-                _0x3e017b.id === _0xed245b.profileId && _0x48a602.setAttribute("selected", "selected");
-                _0x22614c.appendChild(_0x48a602);
-              }), 0 === _0x2c43fd.length) {
-                const _0x1b8d77 = _0xb8fad9("option", {
-                  value: "",
-                  text: "请先添加人员信息",
-                  disabled: true
-                });
-                _0x22614c.appendChild(_0x1b8d77);
-              }
-              _0x22614c.onchange = _0xe2b74 => {
-                {
-                  _0xed245b.profileId = _0xe2b74.target.value;
-                  const _0x451ebb = _0x2c43fd.find(_0xb8cf40 => _0xb8cf40.id === _0xe2b74.target.value);
-                  _0x451ebb && (_0x2f9e65.textContent = "绑定 " + (_0x591420 + 1) + ": " + (_0x451ebb.alias || _0x451ebb.fullName || "人员"));
-                }
-              };
-              return _0x22614c;
-            }
-          })())]), _0xb8fad9("div", {
-            class: "form-row form-row-full"
-          }, [_0x2aa451("多开网站URL地址", _0xed245b.url || "", _0x502933 => {
-            _0xed245b.url = _0x502933;
-          }, "text", {
-            placeholder: "例如: https://www.example.com"
-          })])]));
-          _0xfdf3f0.appendChild(_0x58264d);
-          const _0x329c8a = _0xb8fad9("div", {
-            class: "profile-actions"
-          }, [_0x2c2909("删除", () => {
-            _0x2e7785.multiOpenBindings.splice(_0x591420, 1);
-            _0x289b1b(_0x2e7785);
-          })]);
-          _0xfdf3f0.appendChild(_0x329c8a);
-          _0x244e55.appendChild(_0xfdf3f0);
-        }), 0 === _0x5c7226.length) {
-          {
-            const _0x14ba24 = _0xb8fad9("div", {
-              class: "empty-message",
-              style: "text-align: center; padding: 40px 20px; color: var(--muted);"
-            });
-            _0x14ba24.innerHTML = "\n      <svg width=\"48\" height=\"48\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" style=\"margin: 0 auto 16px; opacity: 0.5;\">\n        <rect x=\"3\" y=\"3\" width=\"7\" height=\"7\"/>\n        <rect x=\"14\" y=\"3\" width=\"7\" height=\"7\"/>\n        <rect x=\"3\" y=\"14\" width=\"7\" height=\"7\"/>\n        <rect x=\"14\" y=\"14\" width=\"7\" height=\"7\"/>\n      </svg>\n      <p style=\"margin: 0; font-size: 14px;\">暂无绑定，点击\"添加绑定\"开始</p>\n    ";
-            _0x244e55.appendChild(_0x14ba24);
-          }
-        }
-      }
-    })(_0xee960a);
-  }
-  !async function () {
-    const _0x5a643e = await _0x5c65b4();
-    console.log("[Options] 初始化，加载配置:", _0x5a643e);
-    _0x5a643e.profiles || (_0x5a643e.profiles = []);
-    Array.isArray(_0x5a643e.profiles) || (console.warn("[Options] profiles 不是数组，重置为空数组"), _0x5a643e.profiles = []);
-    _0x5a643e.multiOpenBindings || (_0x5a643e.multiOpenBindings = []);
-    Array.isArray(_0x5a643e.multiOpenBindings) || (console.warn("[Options] multiOpenBindings 不是数组，重置为空数组"), _0x5a643e.multiOpenBindings = []);
-    console.log("[Options] 初始化后 profiles 数量:", _0x5a643e.profiles.length);
-    console.log("[Options] 初始化后 multiOpenBindings 数量:", _0x5a643e.multiOpenBindings.length);
-    const _0x4761f7 = document.querySelectorAll(".tab-btn");
-    const _0x2b097f = document.querySelectorAll(".tab-content");
-    _0x4761f7.forEach(_0x1f6d7f => {
-      _0x1f6d7f.addEventListener("click", () => {
-        const _0x4f7ff2 = _0x1f6d7f.getAttribute("data-tab");
-        _0x4761f7.forEach(_0x5f00da => _0x5f00da.classList.remove("active"));
-        _0x2b097f.forEach(_0x33443d => _0x33443d.classList.remove("active"));
-        _0x1f6d7f.classList.add("active");
-        const _0x2d2652 = document.getElementById(_0x4f7ff2);
-        _0x2d2652 && _0x2d2652.classList.add("active");
-      });
-    });
-    _0x289b1b(_0x5a643e);
-    document.getElementById("save").onclick = async () => {
-      const _0x386b23 = window.__cfg;
-      console.log("[Options] 保存前 profiles:", _0x386b23.profiles);
-      const _0x3859ac = new Set();
-      const _0x9139a3 = [];
-      const _0x4b8f8f = _0x152b8c => (_0x152b8c || "").toString().replace(/\s+/g, "").toLowerCase();
-      (_0x386b23.profiles || []).forEach(_0x2697a3 => {
-        if (_0x2697a3.fullName || _0x2697a3.idNumber || _0x2697a3.mobile || _0x2697a3.alias || _0x2697a3.address || _0x2697a3.province || _0x2697a3.city || _0x2697a3.district || _0x2697a3.exchangeDate || _0x2697a3.exchangeQuantity) {
-          const _0x2eb627 = _0x4b8f8f(_0x2697a3.fullName) + "|" + _0x4b8f8f(_0x2697a3.idNumber);
-          _0x3859ac.has(_0x2eb627) && "|" !== _0x2eb627 || (_0x3859ac.add(_0x2eb627), _0x9139a3.push(_0x2697a3));
-        } else {
-          const _0x2618ed = "empty_" + _0x2697a3.id;
-          _0x3859ac.has(_0x2618ed) || (_0x3859ac.add(_0x2618ed), _0x9139a3.push(_0x2697a3));
-        }
-      });
-      _0x9139a3.length > 20 ? _0x386b23.profiles = _0x9139a3.slice(0, 20) : _0x386b23.profiles = _0x9139a3;
-      console.log("[Options] 保存后 profiles:", _0x386b23.profiles);
-      console.log("[Options] 保存后 multiOpenBindings:", _0x386b23.multiOpenBindings);
-      _0x386b23.multiOpenBindings && _0x386b23.multiOpenBindings.length > 15 && (_0x386b23.multiOpenBindings = _0x386b23.multiOpenBindings.slice(0, 15));
-      await _0x3e7ab5(_0x386b23);
-      alert("已保存");
-      const _0x503c83 = await _0x5c65b4();
-      console.log("[Options] 重新加载后 profiles:", _0x503c83.profiles);
-      console.log("[Options] 重新加载后 multiOpenBindings:", _0x503c83.multiOpenBindings);
-      _0x289b1b(_0x503c83);
-    };
-    document.getElementById("export").onclick = () => {
-      const _0x26add2 = JSON.parse(JSON.stringify(window.__cfg));
-      const _0x463d74 = new Blob([JSON.stringify(_0x26add2, null, 2)], {
-        type: "application/json"
-      });
-      const _0x14b860 = URL.createObjectURL(_0x463d74);
-      const _0x2d8fca = document.createElement("a");
-      _0x2d8fca.href = _0x14b860;
-      _0x2d8fca.download = "jinpeng-config.json";
-      _0x2d8fca.click();
-      URL.revokeObjectURL(_0x14b860);
-    };
-    document.getElementById("import").onclick = async () => {
-      const _0x22d087 = document.createElement("input");
-      _0x22d087.type = "file";
-      _0x22d087.accept = "application/json";
-      _0x22d087.onchange = async () => {
-        const _0x3c49e7 = _0x22d087.files?.[0];
-        if (!_0x3c49e7) {
-          return;
-        }
-        const _0x303fe7 = await _0x3c49e7.text();
-        try {
-          const _0x5cbeb5 = JSON.parse(_0x303fe7);
-          const _0x24d805 = 20;
-          _0x5cbeb5.profiles && _0x5cbeb5.profiles.length > _0x24d805 && (_0x5cbeb5.profiles = _0x5cbeb5.profiles.slice(0, _0x24d805), alert("导入成功，但只保留了前 " + _0x24d805 + " 个人员（最多支持 " + _0x24d805 + " 人）"));
-          const _0x545246 = 15;
-          _0x5cbeb5.multiOpenBindings && _0x5cbeb5.multiOpenBindings.length > _0x545246 && (_0x5cbeb5.multiOpenBindings = _0x5cbeb5.multiOpenBindings.slice(0, _0x545246), alert("导入成功，但只保留了前 " + _0x545246 + " 个绑定（最多支持 " + _0x545246 + " 个）"));
-          _0x5cbeb5.multiOpenBindings || (_0x5cbeb5.multiOpenBindings = []);
-          Array.isArray(_0x5cbeb5.multiOpenBindings) || (_0x5cbeb5.multiOpenBindings = []);
-          await _0x3e7ab5(_0x5cbeb5);
-          _0x289b1b(await _0x5c65b4());
-          (!_0x5cbeb5.profiles || _0x5cbeb5.profiles.length <= _0x24d805) && (!_0x5cbeb5.multiOpenBindings || _0x5cbeb5.multiOpenBindings.length <= _0x545246) && alert("导入成功");
-        } catch (_0x2c4ed4) {
-          {
-            alert("导入失败：" + _0x2c4ed4.message);
-          }
-        }
-      };
-      _0x22d087.click();
-    };
-    const _0x5469a7 = document.getElementById("versionBadge");
-    if (_0x5469a7) {
       try {
-        const _0x32c7c0 = chrome.runtime.getManifest().version || "0.1.0";
-        _0x5469a7.textContent = "v" + _0x32c7c0;
-      } catch (_0x3200eb) {
+        const _0x3741e0 = Function.prototype.toString.call(_0x3ad849);
+        return _0x3741e0.includes("[native code]") && _0x3741e0.includes(_0x5368f0);
+      } catch (_0x7ea567) {
         {
-          console.error("获取版本号失败:", _0x3200eb);
-          _0x5469a7.textContent = "v0.1.0";
+          return false;
         }
       }
     }
-  }();
+    function _0x17a04f() {
+      const _0x2154fc = [];
+      if (_0x4cc767(_0x5e51ac.fetch, "fetch") || _0x2154fc.push("fetch"), _0x4cc767(_0x5e51ac.Request, "Request") || _0x2154fc.push("Request"), _0x4cc767(_0x5e51ac.Response, "Response") || _0x2154fc.push("Response"), _0x4cc767(_0x5e51ac.Headers, "Headers") || _0x2154fc.push("Headers"), _0x4cc767(_0x5e51ac.Function, "Function") || _0x2154fc.push("Function"), _0x4cc767(_0x5e51ac.eval, "eval") || _0x2154fc.push("eval"), _0x2154fc.length) {
+        try {
+          _0x5e51ac.fetch = _0x5e51ac.fetch;
+          _0x5e51ac.Request = _0x5e51ac.Request;
+          _0x5e51ac.Response = _0x5e51ac.Response;
+          _0x5e51ac.Headers = _0x5e51ac.Headers;
+          _0x5e51ac.Function = _0x5e51ac.Function;
+          _0x5e51ac.eval = _0x5e51ac.eval;
+          console.warn(_0x2cdc6f + " Detected and restored hooked APIs:", _0x2154fc);
+        } catch (_0x442553) {
+          console.warn(_0x2cdc6f + " Detected hooked APIs but failed to restore all", {
+            suspects: _0x2154fc,
+            err: _0x442553
+          });
+        }
+      }
+    }
+    _0x17a04f();
+    setInterval(_0x17a04f, 2000);
+  })();
+  importScripts("libs/logger.js", "libs/notifier.js", "libs/scheduler.js");
+  const _0x23987d = "JP_FILL";
+  const _0x754c48 = "JP_GET_CONFIG";
+  const _0x361250 = "JP_SET_CONFIG";
+  const _0x38e068 = "JP_RUN_AT";
+  const _0x51b609 = "JP_OPEN_OPTIONS";
+  const _0x47a7e4 = "JP_OCR_RECOGNIZE";
+  const _0x390ff0 = "JP_AUTH_VERIFY";
+  const _0x5d25ef = "JP_AUTH_CHECK";
+  const _0x171968 = "JP_AUTH_GET";
+  const _0x47126f = "JP_AUTH_CLEAR";
+  const _0xe27f18 = "JP_CARD_EXPIRE_DATE";
+  const _0x4e392e = "JP_MULTI_OPEN_CREATE_WINDOW";
+  const _0x2489e6 = "JP_MULTI_OPEN_CLOSE_WINDOW";
+  const _0x58e90d = "JP_MULTI_OPEN_QUERY_TABS";
+  const _0x54e0af = "JP_MULTI_OPEN_SEND_MESSAGE";
+  const _0x24252d = "JP_MULTI_OPEN_FOCUS_WINDOW";
+  const _0x3da1ee = "JP_WS_CONNECT";
+  const _0x4c7935 = "JP_WS_SEND";
+  const _0x1db686 = "JP_WS_CLOSE";
+  const _0x442079 = "JP_CARD_AUTH_WS_CONNECT";
+  const _0x203a30 = "JP_CARD_AUTH_WS_SEND";
+  const _0x47ee07 = "JP_CARD_AUTH_WS_CLOSE";
+  const _0x4cd19f = "http://103.39.64.121:8080";
+  const _0xd55f9c = 3600000;
+  const _0x392b7b = 259200000;
+  const _0x321ea1 = 259200000;
+  const _0x166cdf = 3;
+  const _0x466b67 = new Map();
+  let _0x52a9a7 = {
+    lastCheckTime: 0,
+    lastCheckResult: null,
+    offlineRetries: 0,
+    expireWarningSent: false
+  };
+  const _0x219082 = {
+    profiles: [],
+    defaultProfileId: null,
+    profileSelection: {
+      mode: "manual",
+      rules: []
+    },
+    bankFieldMap: {},
+    schedule: {
+      startAt: null,
+      ntpOffsetMs: 0,
+      prewarmSeconds: 10
+    },
+    features: {
+      autoFill: true,
+      autoSubmit: false,
+      retryOnFail: true,
+      maxRetries: 2
+    },
+    notifications: {
+      sound: true,
+      desktop: true
+    },
+    smsMode: "cloud"
+  };
+  async function _0x537e0d() {
+    {
+      const {
+        jpConfig: _0x33e20c
+      } = await chrome.storage.local.get(["jpConfig"]);
+      return {
+        ..._0x219082,
+        ...(_0x33e20c || {})
+      };
+    }
+  }
+  async function _0x1b43fa() {
+    const {
+      jpMachineCode: _0x4a9ef2
+    } = await chrome.storage.local.get(["jpMachineCode"]);
+    if (_0x4a9ef2) {
+      return _0x4a9ef2;
+    }
+    const _0x30dcbf = new Uint8Array(16);
+    crypto.getRandomValues(_0x30dcbf);
+    const _0x3ed4d2 = Array.from(_0x30dcbf, _0x938bf5 => _0x938bf5.toString(16).padStart(2, "0")).join("").toUpperCase();
+    await chrome.storage.local.set({
+      jpMachineCode: _0x3ed4d2
+    });
+    return _0x3ed4d2;
+  }
+  async function _0x277720() {
+    const {
+      jpAuth: _0x57f5f6
+    } = await chrome.storage.local.get(["jpAuth"]);
+    if (!_0x57f5f6) {
+      return null;
+    }
+    if (!_0x57f5f6.savedAt) {
+      const _0x8dfc88 = {
+        ..._0x57f5f6,
+        savedAt: Date.now()
+      };
+      await chrome.storage.local.set({
+        jpAuth: _0x8dfc88
+      });
+      return _0x8dfc88;
+    }
+    return Date.now() - _0x57f5f6.savedAt >= _0x321ea1 ? (await _0x3c537e(), null) : _0x57f5f6;
+  }
+  async function _0x4fbbd7(_0x243aa2) {
+    {
+      const _0x42dfca = {
+        ..._0x243aa2,
+        savedAt: Date.now()
+      };
+      await chrome.storage.local.set({
+        jpAuth: _0x42dfca
+      });
+    }
+  }
+  async function _0x3c537e() {
+    await chrome.storage.local.remove(["jpAuth"]);
+  }
+  async function _0x20eb1b(_0x30f867, _0x21cc08 = false) {
+    {
+      const _0x47e820 = Date.now();
+      if (!_0x21cc08 && _0x52a9a7.lastCheckTime > 0 && _0x47e820 - _0x52a9a7.lastCheckTime < _0xd55f9c && _0x52a9a7.lastCheckResult) {
+        console.log("[JP Background] 使用认证缓存，距上次检查:", (_0x47e820 - _0x52a9a7.lastCheckTime) / 1000, "秒");
+        return _0x52a9a7.lastCheckResult;
+      }
+      const _0x76e7e5 = await _0x1b43fa();
+      try {
+        const _0x2fab0b = await fetch(_0x4cd19f + "/api/v1/cards/check", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            cardCode: _0x30f867,
+            machineCode: _0x76e7e5
+          }),
+          timeout: 5000
+        });
+        if (!_0x2fab0b.ok) {
+          throw new Error("服务器响应错误: " + _0x2fab0b.status);
+        }
+        const _0x3c6ebc = await _0x2fab0b.json();
+        if (console.log("[JP Background] 检查绑定响应:", _0x3c6ebc), 200 !== _0x3c6ebc.code) {
+          _0x52a9a7.lastCheckTime = _0x47e820;
+          _0x52a9a7.lastCheckResult = null;
+          _0x52a9a7.offlineRetries = 0;
+          return null;
+        }
+        if (_0x52a9a7.lastCheckTime = _0x47e820, _0x52a9a7.lastCheckResult = _0x3c6ebc.data, _0x52a9a7.offlineRetries = 0, _0x3c6ebc.data && _0x3c6ebc.data.expireDate) {
+          const _0x52f5c4 = (new Date(_0x3c6ebc.data.expireDate).getTime() - _0x47e820) / 86400000;
+          _0x52f5c4 <= 7 && _0x52f5c4 > 0 && !_0x52a9a7.expireWarningSent && (chrome.notifications.create({
+            type: "basic",
+            iconUrl: "public/eagle.svg",
+            title: "金鹏鸟助手 - 卡密即将过期",
+            message: "您的卡密将在 " + Math.ceil(_0x52f5c4) + " 天后过期，请及时续费。",
+            priority: 2
+          }), _0x52a9a7.expireWarningSent = true);
+        }
+        return _0x3c6ebc.data;
+      } catch (_0x509798) {
+        if (console.error("[JP Background] 检查绑定失败:", _0x509798), _0x52a9a7.offlineRetries++, _0x52a9a7.offlineRetries >= _0x166cdf) {
+          throw console.warn("[JP Background] 离线重试次数超限，清除认证缓存"), _0x52a9a7.lastCheckResult = null, new Error("网络连接失败次数过多，请检查网络后重新认证");
+        }
+        if (_0x52a9a7.lastCheckResult && _0x52a9a7.lastCheckTime > 0 && _0x47e820 - _0x52a9a7.lastCheckTime < _0x392b7b) {
+          console.log("[JP Background] 网络错误，使用宽限期内的认证缓存");
+          return _0x52a9a7.lastCheckResult;
+        }
+        throw _0x509798;
+      }
+    }
+  }
+  async function _0x47551c(_0x17ae91) {
+    const [_0x5889b3] = await chrome.tabs.query({
+      active: true,
+      currentWindow: true
+    });
+    _0x5889b3 && _0x5889b3.id && (await chrome.tabs.sendMessage(_0x5889b3.id, _0x17ae91).catch(() => {}));
+  }
+  const _0x271581 = new Map();
+  const _0x985cff = new Map();
+  chrome.runtime.onMessage.addListener((_0x41e68e, _0x43d467, _0x4aa894) => ((async () => {
+    {
+      switch (_0x41e68e?.["type"]) {
+        case _0x754c48:
+          _0x4aa894(await _0x537e0d());
+          break;
+        case _0x361250:
+          {
+            {
+              const _0x2f1bcf = await async function (_0x265718) {
+                const _0x1a5bd5 = {
+                  ...(await _0x537e0d()),
+                  ..._0x265718
+                };
+                await chrome.storage.local.set({
+                  jpConfig: _0x1a5bd5
+                });
+                return _0x1a5bd5;
+              }(_0x41e68e.payload || {});
+              _0x4aa894(_0x2f1bcf);
+              break;
+            }
+          }
+        case "GET_MACHINE_CODE":
+          try {
+            const _0x4fdf8a = await _0x1b43fa();
+            _0x4aa894({
+              machineCode: _0x4fdf8a
+            });
+          } catch (_0x11c3b7) {
+            _0x4aa894({
+              error: _0x11c3b7.message
+            });
+          }
+          break;
+        case _0x23987d:
+          try {
+            const _0x242921 = await _0x277720();
+            if (!_0x242921 || !_0x242921.cardCode) {
+              _0x4aa894({
+                ok: false,
+                error: "未认证，请先绑定卡密"
+              });
+              break;
+            }
+            const _0x54126e = await _0x20eb1b(_0x242921.cardCode, true);
+            if (!_0x54126e || !_0x54126e.valid) {
+              await _0x3c537e();
+              _0x4aa894({
+                ok: false,
+                error: "认证已失效，请重新验证卡密"
+              });
+              break;
+            }
+            if (_0x54126e.expireDate && new Date(_0x54126e.expireDate).getTime() < Date.now()) {
+              await _0x3c537e();
+              _0x4aa894({
+                ok: false,
+                error: "卡密已过期，请重新购买"
+              });
+              break;
+            }
+          } catch (_0x3bdcba) {
+            if (!(_0x52a9a7.lastCheckResult && _0x52a9a7.lastCheckTime > 0)) {
+              _0x4aa894({
+                ok: false,
+                error: "认证验证失败：" + _0x3bdcba.message
+              });
+              break;
+            }
+            {
+              const _0x9138d2 = Date.now() - _0x52a9a7.lastCheckTime;
+              if (_0x9138d2 >= _0x392b7b) {
+                _0x4aa894({
+                  ok: false,
+                  error: "无法验证认证状态，请检查网络连接"
+                });
+                break;
+              }
+              console.warn("[JP Background] 离线模式执行填表操作，缓存年龄:", _0x9138d2 / 1000, "秒");
+            }
+          }
+          await _0x47551c({
+            type: _0x23987d,
+            payload: _0x41e68e.payload
+          });
+          _0x4aa894({
+            ok: true
+          });
+          break;
+        case _0x38e068:
+          {
+            const {
+              when: _0x555e8a,
+              payload: _0x40c2e5
+            } = _0x41e68e.payload || {};
+            if (!_0x555e8a) {
+              _0x4aa894({
+                ok: false,
+                error: "missing when"
+              });
+              break;
+            }
+            const _0xd0344b = new Date(_0x555e8a).getTime();
+            const _0x5a83b1 = Date.now();
+            const _0x2bf63c = Math.max(0, _0xd0344b - _0x5a83b1);
+            Scheduler.setTimeout(async () => {
+              await _0x47551c({
+                type: _0x23987d,
+                payload: _0x40c2e5
+              });
+            }, _0x2bf63c);
+            _0x4aa894({
+              ok: true,
+              delayMs: _0x2bf63c
+            });
+            break;
+          }
+        case _0x51b609:
+          chrome.runtime.openOptionsPage();
+          _0x4aa894({
+            ok: true
+          });
+          break;
+        case _0x47a7e4:
+          try {
+            const {
+              imageBase64: _0x494bf3,
+              ocrMode: _0x49f5db
+            } = _0x41e68e.payload || {};
+            if (!_0x494bf3) {
+              {
+                _0x4aa894({
+                  ok: false,
+                  error: "missing imageBase64"
+                });
+                break;
+              }
+            }
+            const _0x392540 = await async function (_0x21cd6e, _0x1f7827 = "normal") {
+              try {
+                console.log("[JP Background] 开始调用后端OCR识别接口...", {
+                  ocrMode: _0x1f7827
+                });
+                const _0x5c2c03 = await _0x277720();
+                if (!_0x5c2c03 || !_0x5c2c03.cardCode) {
+                  throw new Error("未认证，请先绑定卡密");
+                }
+                const _0x18a533 = await _0x1b43fa();
+                const _0x43e709 = {
+                  base64Image: _0x21cd6e,
+                  cardCode: _0x5c2c03.cardCode,
+                  machineCode: _0x18a533,
+                  ocrMode: _0x1f7827 || "normal"
+                };
+                console.log("[JP Background] 发送OCR识别请求:", {
+                  cardCode: _0x5c2c03.cardCode,
+                  machineCode: _0x18a533,
+                  imageSize: _0x21cd6e ? _0x21cd6e.length : 0
+                });
+                const _0x93135e = await fetch(_0x4cd19f + "/api/v1/captcha/recognize", {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json"
+                  },
+                  body: JSON.stringify(_0x43e709)
+                });
+                if (!_0x93135e.ok) {
+                  let _0x5be058 = "后端OCR API响应错误: " + _0x93135e.status + " " + _0x93135e.statusText;
+                  try {
+                    const _0x13cef3 = await _0x93135e.json();
+                    _0x13cef3.message ? _0x5be058 = _0x13cef3.message : _0x13cef3.msg && (_0x5be058 = _0x13cef3.msg);
+                  } catch (_0x1f050b) {
+                    const _0x26b650 = await _0x93135e.text();
+                    if (_0x26b650) {
+                      try {
+                        const _0x58956c = JSON.parse(_0x26b650);
+                        _0x58956c.message ? _0x5be058 = _0x58956c.message : _0x58956c.msg && (_0x5be058 = _0x58956c.msg);
+                      } catch (_0x5b7bf7) {
+                        _0x5be058 = _0x26b650 || _0x5be058;
+                      }
+                    }
+                  }
+                  throw new Error(_0x5be058);
+                }
+                const _0x45a18c = await _0x93135e.json();
+                if (console.log("[JP Background] 后端OCR API响应:", _0x45a18c), 200 !== _0x45a18c.code) {
+                  {
+                    const _0x17e205 = _0x45a18c.message || _0x45a18c.msg || "OCR识别失败";
+                    throw new Error(_0x17e205);
+                  }
+                }
+                const _0x4c9d4a = _0x45a18c.data;
+                if (!_0x4c9d4a) {
+                  throw new Error("后端OCR API返回格式异常: data字段为空");
+                }
+                if (!_0x4c9d4a.success) {
+                  const _0xe24ea7 = _0x4c9d4a.message || "OCR识别失败";
+                  throw new Error(_0xe24ea7);
+                }
+                const _0x6b7d3a = _0x4c9d4a.result;
+                if (!_0x6b7d3a) {
+                  throw new Error("后端OCR API未返回识别结果");
+                }
+                console.log("[JP Background] 识别到的文字:", _0x6b7d3a);
+                const _0x570e0e = _0x4c9d4a.remainingUsage || _0x4c9d4a.remainingNormalUsage || (undefined !== _0x4c9d4a.remainingSenselessUsage ? _0x4c9d4a.remainingSenselessUsage : null);
+                console.log("[JP Background] 剩余使用次数:", _0x570e0e);
+                return {
+                  text: _0x6b7d3a,
+                  result: _0x6b7d3a,
+                  remainingUsage: _0x570e0e,
+                  remainingNormalUsage: _0x4c9d4a.remainingNormalUsage,
+                  remainingSenselessUsage: _0x4c9d4a.remainingSenselessUsage
+                };
+              } catch (_0x5d1dca) {
+                throw console.error("[JP Background] 调用后端OCR API失败:", _0x5d1dca), _0x5d1dca;
+              }
+            }(_0x494bf3, _0x49f5db);
+            if ("string" == typeof _0x392540) {
+              _0x4aa894({
+                ok: true,
+                result: _0x392540,
+                text: _0x392540
+              });
+            } else {
+              const _0x5e984b = _0x392540.text || _0x392540.result || "";
+              _0x4aa894({
+                ok: true,
+                result: _0x5e984b,
+                text: _0x5e984b,
+                remainingUsage: _0x392540.remainingUsage
+              });
+            }
+          } catch (_0x5566a5) {
+            _0x4aa894({
+              ok: false,
+              error: _0x5566a5.message
+            });
+          }
+          break;
+        case _0x390ff0:
+          try {
+            const {
+              cardCode: _0x10fac6
+            } = _0x41e68e.payload || {};
+            if (!_0x10fac6) {
+              _0x4aa894({
+                ok: false,
+                error: "请输入卡密"
+              });
+              break;
+            }
+            const _0x400763 = await async function (_0x2096ec) {
+              {
+                const _0x4bbf23 = await _0x1b43fa();
+                const _0x504f27 = await fetch(_0x4cd19f + "/api/v1/cards/verify", {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json"
+                  },
+                  body: JSON.stringify({
+                    cardCode: _0x2096ec,
+                    machineCode: _0x4bbf23
+                  })
+                });
+                if (!_0x504f27.ok) {
+                  throw new Error("服务器响应错误: " + _0x504f27.status);
+                }
+                const _0xcaa3e4 = await _0x504f27.json();
+                if (console.log("[JP Background] 卡密验证响应:", _0xcaa3e4), 200 !== _0xcaa3e4.code) {
+                  throw new Error(_0xcaa3e4.msg || "验证失败");
+                }
+                return _0xcaa3e4.data;
+              }
+            }(_0x10fac6);
+            if (_0x400763.valid) {
+              const _0x226948 = {
+                cardCode: _0x10fac6,
+                expireDate: _0x400763.expireDate,
+                verifyTime: new Date().toISOString()
+              };
+              await _0x4fbbd7(_0x226948);
+              _0x4aa894({
+                ok: true,
+                data: _0x226948
+              });
+            } else {
+              _0x4aa894({
+                ok: false,
+                error: _0x400763.message || "验证失败"
+              });
+            }
+          } catch (_0x2b7a4f) {
+            _0x4aa894({
+              ok: false,
+              error: _0x2b7a4f.message || "验证失败"
+            });
+          }
+          break;
+        case _0x5d25ef:
+          try {
+            {
+              const _0x5544c6 = await _0x277720();
+              if (!_0x5544c6 || !_0x5544c6.cardCode) {
+                _0x4aa894({
+                  ok: false,
+                  error: "未认证"
+                });
+                break;
+              }
+              const _0x24216a = _0x41e68e.payload?.["forceCheck"] || false;
+              const _0x1acb46 = await _0x20eb1b(_0x5544c6.cardCode, _0x24216a);
+              if (_0x1acb46 && _0x1acb46.valid) {
+                if (_0x1acb46.expireDate && new Date(_0x1acb46.expireDate).getTime() < Date.now()) {
+                  {
+                    await _0x3c537e();
+                    _0x52a9a7 = {
+                      lastCheckTime: 0,
+                      lastCheckResult: null,
+                      offlineRetries: 0,
+                      expireWarningSent: false
+                    };
+                    _0x4aa894({
+                      ok: false,
+                      error: "卡密已过期，请重新购买"
+                    });
+                    break;
+                  }
+                }
+                _0x5544c6.lastVerifyTime = new Date().toISOString();
+                await _0x4fbbd7(_0x5544c6);
+                _0x4aa894({
+                  ok: true,
+                  data: _0x5544c6,
+                  fromCache: !_0x24216a && null !== _0x52a9a7.lastCheckResult,
+                  cacheAge: _0x24216a ? 0 : (Date.now() - _0x52a9a7.lastCheckTime) / 1000
+                });
+              } else {
+                await _0x3c537e();
+                _0x52a9a7 = {
+                  lastCheckTime: 0,
+                  lastCheckResult: null,
+                  offlineRetries: 0,
+                  expireWarningSent: false
+                };
+                _0x4aa894({
+                  ok: false,
+                  error: "认证已失效，请重新验证"
+                });
+              }
+            }
+          } catch (_0x1e0cbe) {
+            const _0x2c91f7 = await _0x277720();
+            if (_0x2c91f7 && _0x2c91f7.cardCode && _0x52a9a7.lastCheckResult) {
+              const _0x915bde = Date.now() - _0x52a9a7.lastCheckTime;
+              if (_0x915bde < _0x392b7b) {
+                {
+                  _0x4aa894({
+                    ok: true,
+                    data: _0x2c91f7,
+                    offline: true,
+                    offlineRetries: _0x52a9a7.offlineRetries,
+                    maxRetries: _0x166cdf,
+                    cacheAge: _0x915bde / 1000
+                  });
+                  break;
+                }
+              }
+            }
+            _0x4aa894({
+              ok: false,
+              error: _0x1e0cbe.message || "检查认证失败"
+            });
+          }
+          break;
+        case _0x171968:
+          {
+            const _0xb2b9b7 = await _0x277720();
+            _0x4aa894({
+              ok: !!_0xb2b9b7,
+              data: _0xb2b9b7
+            });
+            break;
+          }
+        case _0xe27f18:
+          try {
+            const {
+              cardCode: _0x21d011,
+              forceCheck: _0x55ca2c
+            } = _0x41e68e.payload || {};
+            if (!_0x21d011) {
+              _0x4aa894({
+                ok: false,
+                error: "缺少卡密参数"
+              });
+              break;
+            }
+            const _0x42d11b = await async function (_0x2eca8f, _0xf4909 = {}) {
+              const _0xf064a7 = true === _0xf4909.forceCheck;
+              const _0x38e8dc = _0x466b67.get(_0x2eca8f);
+              const _0x26ffe1 = Date.now();
+              if (!_0xf064a7 && _0x38e8dc && _0x26ffe1 - _0x38e8dc.ts < 259200000) {
+                return _0x38e8dc.data;
+              }
+              const _0x65f465 = await fetch(_0x4cd19f + "/api/v1/cards/" + encodeURIComponent(_0x2eca8f) + "/expire-date", {
+                method: "GET",
+                headers: {
+                  "Content-Type": "application/json"
+                }
+              });
+              if (!_0x65f465.ok) {
+                throw new Error("服务器响应错误: " + _0x65f465.status);
+              }
+              const _0xbd5e88 = await _0x65f465.json();
+              if (console.log("[JP Background] 卡密有效期响应:", _0xbd5e88), 200 !== _0xbd5e88.code) {
+                throw new Error(_0xbd5e88.msg || "查询失败");
+              }
+              _0x466b67.set(_0x2eca8f, {
+                data: _0xbd5e88.data,
+                ts: _0x26ffe1
+              });
+              return _0xbd5e88.data;
+            }(_0x21d011, {
+              forceCheck: _0x55ca2c
+            });
+            _0x4aa894({
+              ok: true,
+              data: _0x42d11b
+            });
+          } catch (_0x2cc967) {
+            _0x4aa894({
+              ok: false,
+              error: _0x2cc967.message || "查询有效期失败"
+            });
+          }
+          break;
+        case _0x47126f:
+          await _0x3c537e();
+          _0x4aa894({
+            ok: true
+          });
+          break;
+        case _0x4e392e:
+          {
+            const {
+              url: _0x34a0e9,
+              width: _0x151c1e,
+              height: _0x276909,
+              left: _0x5d49e9,
+              top: _0x35fdc2,
+              focused: _0x4a7255
+            } = _0x41e68e.payload || {};
+            if (!_0x34a0e9) {
+              _0x4aa894({
+                ok: false,
+                error: "缺少URL参数"
+              });
+              break;
+            }
+            try {
+              const _0x13c2bd = {
+                url: _0x34a0e9,
+                type: "normal",
+                width: _0x151c1e || 800,
+                height: _0x276909 || 600,
+                focused: undefined !== _0x4a7255 && _0x4a7255
+              };
+              undefined !== _0x5d49e9 && undefined !== _0x35fdc2 && (_0x13c2bd.left = _0x5d49e9, _0x13c2bd.top = _0x35fdc2);
+              chrome.windows.create(_0x13c2bd, _0x39fea1 => {
+                chrome.runtime.lastError ? (console.error("[JP Background] 创建窗口失败:", chrome.runtime.lastError, "URL:", _0x34a0e9, "Options:", _0x13c2bd), _0x4aa894({
+                  ok: false,
+                  error: chrome.runtime.lastError.message
+                })) : _0x39fea1 && _0x39fea1.id ? (console.log("[JP Background] 窗口创建成功:", _0x39fea1.id, "URL:", _0x34a0e9.substring(0, 100), "Position:", {
+                  left: _0x5d49e9,
+                  top: _0x35fdc2
+                }), _0x4aa894({
+                  ok: true,
+                  window: _0x39fea1
+                })) : (console.error("[JP Background] 窗口创建返回无效对象:", _0x39fea1, "URL:", _0x34a0e9), _0x4aa894({
+                  ok: false,
+                  error: "窗口创建返回无效对象"
+                }));
+              });
+              return true;
+            } catch (_0x212a6f) {
+              console.error("[JP Background] 创建窗口异常:", _0x212a6f, "URL:", _0x34a0e9);
+              _0x4aa894({
+                ok: false,
+                error: _0x212a6f.message
+              });
+            }
+            break;
+          }
+        case _0x24252d:
+          try {
+            const {
+              windowId: _0x504f44
+            } = _0x41e68e.payload || {};
+            return _0x504f44 ? (chrome.windows.update(_0x504f44, {
+              focused: true
+            }, _0x1f2837 => {
+              chrome.runtime.lastError ? (console.error("[JP Background] 聚焦窗口失败:", chrome.runtime.lastError, "WindowId:", _0x504f44), _0x4aa894({
+                ok: false,
+                error: chrome.runtime.lastError.message
+              })) : _0x1f2837 ? (console.log("[JP Background] 窗口聚焦成功:", _0x504f44), _0x4aa894({
+                ok: true,
+                window: _0x1f2837
+              })) : _0x4aa894({
+                ok: false,
+                error: "窗口聚焦失败"
+              });
+            }), true) : void _0x4aa894({
+              ok: false,
+              error: "缺少窗口ID"
+            });
+          } catch (_0x365982) {
+            console.error("[JP Background] 聚焦窗口异常:", _0x365982);
+            _0x4aa894({
+              ok: false,
+              error: _0x365982.message
+            });
+          }
+          break;
+        case _0x2489e6:
+          try {
+            const {
+              windowId: _0x5600a0
+            } = _0x41e68e.payload || {};
+            return _0x5600a0 ? (chrome.windows.remove(_0x5600a0, () => {
+              chrome.runtime.lastError ? _0x4aa894({
+                ok: false,
+                error: chrome.runtime.lastError.message
+              }) : _0x4aa894({
+                ok: true
+              });
+            }), true) : void _0x4aa894({
+              ok: false,
+              error: "缺少窗口ID"
+            });
+          } catch (_0x4092c9) {
+            _0x4aa894({
+              ok: false,
+              error: _0x4092c9.message
+            });
+          }
+          break;
+        case _0x58e90d:
+          try {
+            {
+              const {
+                windowId: _0xe62dc5
+              } = _0x41e68e.payload || {};
+              return undefined === _0xe62dc5 ? void _0x4aa894({
+                ok: false,
+                error: "缺少窗口ID"
+              }) : (chrome.tabs.query({
+                windowId: _0xe62dc5
+              }, _0x3f945e => {
+                {
+                  chrome.runtime.lastError ? _0x4aa894({
+                    ok: false,
+                    error: chrome.runtime.lastError.message
+                  }) : _0x4aa894({
+                    ok: true,
+                    tabs: _0x3f945e
+                  });
+                }
+              }), true);
+            }
+          } catch (_0x71f958) {
+            _0x4aa894({
+              ok: false,
+              error: _0x71f958.message
+            });
+          }
+          break;
+        case _0x54e0af:
+          try {
+            const {
+              tabId: _0x4f8cdd,
+              message: _0x1e1676
+            } = _0x41e68e.payload || {};
+            return undefined !== _0x4f8cdd && _0x1e1676 ? (chrome.tabs.sendMessage(_0x4f8cdd, _0x1e1676, _0x20d5c6 => {
+              chrome.runtime.lastError ? _0x4aa894({
+                ok: false,
+                error: chrome.runtime.lastError.message
+              }) : _0x4aa894({
+                ok: true,
+                response: _0x20d5c6
+              });
+            }), true) : void _0x4aa894({
+              ok: false,
+              error: "缺少标签页ID或消息"
+            });
+          } catch (_0x55494c) {
+            _0x4aa894({
+              ok: false,
+              error: _0x55494c.message
+            });
+          }
+          break;
+        case _0x3da1ee:
+          try {
+            const {
+              url: _0x24e48d,
+              tabId: _0x5f1bb2
+            } = _0x41e68e.payload || {};
+            if (!_0x24e48d) {
+              return void _0x4aa894({
+                ok: false,
+                error: "缺少WebSocket URL"
+              });
+            }
+            const _0x1bb91f = _0x5f1bb2 || _0x43d467?.["tab"]?.["id"];
+            const _0x51716d = function (_0x412171) {
+              return "tab_" + (_0x412171 || "default");
+            }(_0x1bb91f);
+            if (_0x271581.has(_0x51716d)) {
+              const _0x48f15f = _0x271581.get(_0x51716d);
+              _0x48f15f && _0x48f15f.readyState !== WebSocket.CLOSED && _0x48f15f.close();
+              _0x271581.delete(_0x51716d);
+              _0x985cff.delete(_0x51716d);
+            }
+            const _0x373938 = new WebSocket(_0x24e48d);
+            _0x1bb91f && _0x985cff.set(_0x51716d, _0x1bb91f);
+            _0x373938.onopen = () => {
+              console.log("[JP Background] WebSocket连接成功:", _0x24e48d);
+              const _0x10d821 = _0x985cff.get(_0x51716d);
+              _0x10d821 && chrome.tabs.sendMessage(_0x10d821, {
+                type: "JP_WS_EVENT",
+                event: "open",
+                connectionKey: _0x51716d
+              }).catch(() => {});
+            };
+            _0x373938.onmessage = _0x59bd9c => {
+              console.log("[JP Background] WebSocket收到消息:", _0x59bd9c.data);
+              const _0x20a3dc = _0x985cff.get(_0x51716d);
+              _0x20a3dc && chrome.tabs.sendMessage(_0x20a3dc, {
+                type: "JP_WS_EVENT",
+                event: "message",
+                data: _0x59bd9c.data,
+                connectionKey: _0x51716d
+              }).catch(() => {});
+            };
+            _0x373938.onerror = _0x37e587 => {
+              const _0x3a4ea7 = _0x37e587 instanceof Error ? _0x37e587.message : _0x37e587?.["message"] || _0x37e587?.["type"] || "WebSocket连接错误";
+              const _0x45d2f2 = _0x985cff.get(_0x51716d);
+              _0x45d2f2 && chrome.tabs.sendMessage(_0x45d2f2, {
+                type: "JP_WS_EVENT",
+                event: "error",
+                error: _0x3a4ea7,
+                connectionKey: _0x51716d
+              }).catch(() => {});
+            };
+            _0x373938.onclose = _0x58802b => {
+              {
+                console.log("[JP Background] WebSocket连接已关闭:", {
+                  code: _0x58802b.code,
+                  reason: _0x58802b.reason,
+                  wasClean: _0x58802b.wasClean
+                });
+                const _0x5ad5ac = _0x985cff.get(_0x51716d);
+                _0x5ad5ac && chrome.tabs.sendMessage(_0x5ad5ac, {
+                  type: "JP_WS_EVENT",
+                  event: "close",
+                  code: _0x58802b.code,
+                  reason: _0x58802b.reason,
+                  wasClean: _0x58802b.wasClean,
+                  connectionKey: _0x51716d
+                }).catch(() => {});
+                _0x271581.delete(_0x51716d);
+                _0x985cff.delete(_0x51716d);
+              }
+            };
+            _0x271581.set(_0x51716d, _0x373938);
+            _0x4aa894({
+              ok: true,
+              connectionKey: _0x51716d
+            });
+          } catch (_0x438fdc) {
+            console.error("[JP Background] WebSocket连接失败:", _0x438fdc);
+            _0x4aa894({
+              ok: false,
+              error: _0x438fdc.message
+            });
+          }
+          break;
+        case _0x4c7935:
+          try {
+            {
+              const {
+                connectionKey: _0x49bf38,
+                message: _0x410504
+              } = _0x41e68e.payload || {};
+              if (!_0x49bf38 || !_0x410504) {
+                return void _0x4aa894({
+                  ok: false,
+                  error: "缺少连接标识或消息"
+                });
+              }
+              const _0x405a11 = _0x271581.get(_0x49bf38);
+              if (!_0x405a11) {
+                return void _0x4aa894({
+                  ok: false,
+                  error: "WebSocket连接不存在"
+                });
+              }
+              if (_0x405a11.readyState !== WebSocket.OPEN) {
+                return void _0x4aa894({
+                  ok: false,
+                  error: "WebSocket连接未打开"
+                });
+              }
+              _0x405a11.send("string" == typeof _0x410504 ? _0x410504 : JSON.stringify(_0x410504));
+              _0x4aa894({
+                ok: true
+              });
+            }
+          } catch (_0x47ed05) {
+            console.error("[JP Background] WebSocket发送消息失败:", _0x47ed05);
+            _0x4aa894({
+              ok: false,
+              error: _0x47ed05.message
+            });
+          }
+          break;
+        case _0x1db686:
+          try {
+            {
+              const {
+                connectionKey: _0x58d0bd
+              } = _0x41e68e.payload || {};
+              if (!_0x58d0bd) {
+                return void _0x4aa894({
+                  ok: false,
+                  error: "缺少连接标识"
+                });
+              }
+              const _0x4c689c = _0x271581.get(_0x58d0bd);
+              _0x4c689c ? (_0x4c689c.close(), _0x271581.delete(_0x58d0bd), _0x4aa894({
+                ok: true
+              })) : _0x4aa894({
+                ok: false,
+                error: "WebSocket连接不存在"
+              });
+            }
+          } catch (_0x451f98) {
+            {
+              console.error("[JP Background] WebSocket关闭失败:", _0x451f98);
+              _0x4aa894({
+                ok: false,
+                error: _0x451f98.message
+              });
+            }
+          }
+          break;
+        case _0x442079:
+          try {
+            const {
+              url: _0x244fdb
+            } = _0x41e68e.payload || {};
+            if (!_0x244fdb) {
+              return void _0x4aa894({
+                ok: false,
+                error: "缺少WebSocket URL"
+              });
+            }
+            const _0x43d280 = "card_auth_ws";
+            if (_0x271581.has(_0x43d280)) {
+              const _0x35b437 = _0x271581.get(_0x43d280);
+              _0x35b437 && _0x35b437.readyState !== WebSocket.CLOSED && _0x35b437.close();
+              _0x271581.delete(_0x43d280);
+            }
+            const _0x2569d6 = new WebSocket(_0x244fdb);
+            _0x2569d6.onopen = () => {
+              console.log("[JP Background] 卡密认证WebSocket连接成功:", _0x244fdb);
+              chrome.tabs.query({}, _0x3dfdd0 => {
+                _0x3dfdd0.forEach(_0x34d837 => {
+                  {
+                    chrome.tabs.sendMessage(_0x34d837.id, {
+                      type: "JP_CARD_AUTH_WS_EVENT",
+                      event: "open",
+                      connectionKey: _0x43d280
+                    }).catch(() => {});
+                  }
+                });
+              });
+            };
+            _0x2569d6.onmessage = _0x37d49e => {
+              console.log("[JP Background] 卡密认证WebSocket收到消息:", _0x37d49e.data);
+              chrome.tabs.query({}, _0x542d32 => {
+                _0x542d32.forEach(_0x53e3d9 => {
+                  chrome.tabs.sendMessage(_0x53e3d9.id, {
+                    type: "JP_CARD_AUTH_WS_EVENT",
+                    event: "message",
+                    data: _0x37d49e.data,
+                    connectionKey: _0x43d280
+                  }).catch(() => {});
+                });
+              });
+            };
+            _0x2569d6.onerror = _0x94bb60 => {
+              const _0x544c5a = _0x94bb60 instanceof Error ? _0x94bb60.message : _0x94bb60?.["message"] || _0x94bb60?.["type"] || "卡密认证WebSocket连接错误";
+              chrome.tabs.query({}, _0x5dadb8 => {
+                _0x5dadb8.forEach(_0x1fbc27 => {
+                  chrome.tabs.sendMessage(_0x1fbc27.id, {
+                    type: "JP_CARD_AUTH_WS_EVENT",
+                    event: "error",
+                    error: _0x544c5a,
+                    connectionKey: _0x43d280
+                  }).catch(() => {});
+                });
+              });
+            };
+            _0x2569d6.onclose = _0x8ba42b => {
+              console.log("[JP Background] 卡密认证WebSocket连接已关闭:", {
+                code: _0x8ba42b.code,
+                reason: _0x8ba42b.reason,
+                wasClean: _0x8ba42b.wasClean
+              });
+              chrome.tabs.query({}, _0x38bad6 => {
+                _0x38bad6.forEach(_0x1a1c07 => {
+                  chrome.tabs.sendMessage(_0x1a1c07.id, {
+                    type: "JP_CARD_AUTH_WS_EVENT",
+                    event: "close",
+                    code: _0x8ba42b.code,
+                    reason: _0x8ba42b.reason,
+                    wasClean: _0x8ba42b.wasClean,
+                    connectionKey: _0x43d280
+                  }).catch(() => {});
+                });
+              });
+              _0x271581.delete(_0x43d280);
+            };
+            _0x271581.set(_0x43d280, _0x2569d6);
+            _0x4aa894({
+              ok: true,
+              connectionKey: _0x43d280
+            });
+          } catch (_0x2b858c) {
+            console.error("[JP Background] 卡密认证WebSocket连接失败:", _0x2b858c);
+            _0x4aa894({
+              ok: false,
+              error: _0x2b858c.message
+            });
+          }
+          break;
+        case _0x203a30:
+          try {
+            {
+              const {
+                message: _0x3009be
+              } = _0x41e68e.payload || {};
+              if (!_0x3009be) {
+                return void _0x4aa894({
+                  ok: false,
+                  error: "缺少消息"
+                });
+              }
+              const _0x4319f0 = "card_auth_ws";
+              const _0x15735f = _0x271581.get(_0x4319f0);
+              if (!_0x15735f) {
+                return void _0x4aa894({
+                  ok: false,
+                  error: "卡密认证WebSocket连接不存在"
+                });
+              }
+              if (_0x15735f.readyState !== WebSocket.OPEN) {
+                return void _0x4aa894({
+                  ok: false,
+                  error: "卡密认证WebSocket连接未打开"
+                });
+              }
+              _0x15735f.send("string" == typeof _0x3009be ? _0x3009be : JSON.stringify(_0x3009be));
+              _0x4aa894({
+                ok: true
+              });
+            }
+          } catch (_0x28a01c) {
+            console.error("[JP Background] 卡密认证WebSocket发送消息失败:", _0x28a01c);
+            _0x4aa894({
+              ok: false,
+              error: _0x28a01c.message
+            });
+          }
+          break;
+        case _0x47ee07:
+          try {
+            const _0x5259cd = "card_auth_ws";
+            const _0x148536 = _0x271581.get(_0x5259cd);
+            _0x148536 ? (_0x148536.close(), _0x271581.delete(_0x5259cd), _0x4aa894({
+              ok: true
+            })) : _0x4aa894({
+              ok: false,
+              error: "卡密认证WebSocket连接不存在"
+            });
+          } catch (_0x2c38d6) {
+            console.error("[JP Background] 卡密认证WebSocket关闭失败:", _0x2c38d6);
+            _0x4aa894({
+              ok: false,
+              error: _0x2c38d6.message
+            });
+          }
+      }
+    }
+  })(), true));
+  chrome.runtime.onInstalled.addListener(async () => {
+    const _0x268e5a = await _0x537e0d();
+    Logger.info("金鹏鸟助手已安装/更新", _0x268e5a);
+    chrome.alarms.create("periodicAuthCheck", {
+      periodInMinutes: _0xd55f9c / 60000
+    });
+  });
+  chrome.alarms.onAlarm.addListener(async _0x26ad42 => {
+    if ("periodicAuthCheck" === _0x26ad42.name) {
+      console.log("[JP Background] 执行定期认证检查...");
+      const _0x18df3b = await _0x277720();
+      if (!_0x18df3b || !_0x18df3b.cardCode) {
+        return void console.log("[JP Background] 未绑定卡密，跳过定期检查");
+      }
+      try {
+        {
+          const _0x35c6da = await _0x20eb1b(_0x18df3b.cardCode, true);
+          _0x35c6da && _0x35c6da.valid ? _0x35c6da.expireDate && (new Date(_0x35c6da.expireDate).getTime() < Date.now() ? (await _0x3c537e(), _0x52a9a7 = {
+            lastCheckTime: 0,
+            lastCheckResult: null,
+            offlineRetries: 0,
+            expireWarningSent: false
+          }, chrome.notifications.create({
+            type: "basic",
+            iconUrl: "public/eagle.svg",
+            title: "金鹏鸟助手 - 卡密已过期",
+            message: "您的卡密已过期，请重新购买。",
+            priority: 2
+          }), console.warn("[JP Background] 定期检查：卡密已过期")) : console.log("[JP Background] 定期检查：认证有效")) : (await _0x3c537e(), _0x52a9a7 = {
+            lastCheckTime: 0,
+            lastCheckResult: null,
+            offlineRetries: 0,
+            expireWarningSent: false
+          }, chrome.notifications.create({
+            type: "basic",
+            iconUrl: "public/eagle.svg",
+            title: "金鹏鸟助手 - 认证失效",
+            message: "您的卡密认证已失效，请重新验证。",
+            priority: 2
+          }), console.warn("[JP Background] 定期检查：认证已失效"));
+        }
+      } catch (_0x58eb9f) {
+        {
+          console.error("[JP Background] 定期认证检查失败:", _0x58eb9f);
+        }
+      }
+    }
+  });
 })();
